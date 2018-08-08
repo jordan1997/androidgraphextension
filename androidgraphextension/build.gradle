@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android'
 ext {
 
     bintrayRepo = "AndroidGraphExtension"
-    bintrayName = "com.wajahatkarim3.clapfab"
+    bintrayName = "com.schoolhelper.graphextension"
 
     publishedGroupId = 'com.schoolhelper.graphextension'
     libraryName = 'androidgraphextension'
