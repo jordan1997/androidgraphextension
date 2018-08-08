@@ -5,7 +5,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
 
-    bintrayRepo = "AndroidGraphExtension"
+    bintrayRepo = "androidgraphextension"
     bintrayName = "com.schoolhelper.graphextension"
 
     publishedGroupId = 'com.schoolhelper.graphextension'
@@ -24,7 +24,7 @@ ext {
     developerEmail = 'vovochkastelmashchuk@gmail.com'
 
     licenseName = 'MIT License'
-    licenseUrl = 'https://github.com/jordan1997/GraphExtension/blob/master/LICENSE#L13'
+    licenseUrl = 'https://opensource.org/licenses/MIT'
     allLicenses = ["MIT"]
 }
 
@@ -56,4 +56,9 @@ dependencies {
 }
 repositories {
     mavenCentral()
+}
+
+if (project.rootProject.file('local.properties').exists()) {
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
 }
