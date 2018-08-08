@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
 
@@ -12,8 +14,8 @@ ext {
 
     libraryDescription = 'A library for more easy work with android canvas'
 
-    siteUrl = 'https://github.com/wajahatkarim3/MediumClap-Android'
-    gitUrl = 'https://github.com/wajahatkarim3/MediumClap-Android.git'
+    siteUrl = 'https://github.com/jordan1997/GraphExtension'
+    gitUrl = 'https://github.com/jordan1997/GraphExtension.git'
 
     libraryVersion = '1.0.0'
 
@@ -21,8 +23,8 @@ ext {
     developerName = 'Vova Stelmashchuk'
     developerEmail = 'vovochkastelmashchuk@gmail.com'
 
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    licenseName = 'MIT License'
+    licenseUrl = 'https://github.com/jordan1997/GraphExtension/blob/master/LICENSE#L13'
     allLicenses = ["MIT"]
 }
 
@@ -50,7 +52,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()

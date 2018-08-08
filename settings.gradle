@@ -1,1 +1,1 @@
-include ':app', ':androidgraphextension'
+include ':androidgraphextension'
