@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+ext {
+
+    bintrayRepo = "AndroidGraphExtension"
+    bintrayName = "com.wajahatkarim3.clapfab"
+
+    publishedGroupId = 'com.schoolhelper.graphextension'
+    libraryName = 'androidgraphextension'
+    artifact = 'androidgraphextension'
+
+    libraryDescription = 'A library for more easy work with android canvas'
+
+    siteUrl = 'https://github.com/wajahatkarim3/MediumClap-Android'
+    gitUrl = 'https://github.com/wajahatkarim3/MediumClap-Android.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'schoolhelper'
+    developerName = 'Vova Stelmashchuk'
+    developerEmail = 'vovochkastelmashchuk@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["MIT"]
+}
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
+}
