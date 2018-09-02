@@ -5,7 +5,9 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
 
-    bintrayRepo = "androidgraphextension"
+    userOrg = 'schoolhelper'
+
+    bintrayRepo = 'androidgraphextension'
     bintrayName = "com.schoolhelper.graphextension"
 
     publishedGroupId = 'com.schoolhelper.graphextension'
@@ -58,7 +60,7 @@ repositories {
     mavenCentral()
 }
 
-if (project.rootProject.file('local.properties').exists()) {
-    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
-}
+//if (project.rootProject.file('local.properties').exists()) {
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+//}

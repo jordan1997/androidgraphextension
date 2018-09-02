@@ -1,30 +1,8 @@
 package com.schoolhelper.androidgraphextension
 
 import android.graphics.Path
-import android.graphics.Point
 import android.graphics.PointF
 import org.apache.commons.math3.geometry.euclidean.twod.Vector2D
-import org.apache.commons.math3.util.FastMath
-
-fun dim(a: PointF, b: PointF) = Math.sqrt(((a.x - b.x).sqr + (a.y - b.y).sqr).toDouble())
-
-val Float.sqr: Float
-	get() = this.toDouble().sqr.toFloat()
-
-val Double.sqr: Double
-	get() = FastMath.pow(this, 2.0)
-
-fun Vector2D(startPoint: PointF, endPoint: PointF) = Vector2D((startPoint.x - endPoint.x).toDouble(), (startPoint.y - endPoint.y).toDouble())
-
-fun Vector2D(startPoint: Point, endPoint: Point) = Vector2D((startPoint.x - endPoint.x).toDouble(), (startPoint.y - endPoint.y).toDouble())
-
-fun Vector2D.safeNormalize() = (if (this == Vector2D.ZERO) {
-	Vector2D.ZERO
-} else {
-	this.normalize()
-})!!
-
-fun Vector2D.makeNormalVector() = Vector2D(-this.y, this.x)
 
 operator fun PointF.unaryMinus() = PointF(-this.x, -this.y)
 
