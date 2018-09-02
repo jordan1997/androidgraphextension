@@ -1,6 +1,8 @@
 # GraphExtension
 A library for more easy work with the android canvas
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # The library include extension methods
 
 ## Path
