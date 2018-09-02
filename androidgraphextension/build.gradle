@@ -34,4 +34,6 @@ repositories {
     mavenCentral()
 }
 
-apply from: 'https://raw.githubusercontent.com/jordan1997/jcenter-config/master/deploy.gradle'
+if (!System.getenv('CI')) {
+    apply from: 'https://raw.githubusercontent.com/jordan1997/jcenter-config/master/deploy.gradle'
+}

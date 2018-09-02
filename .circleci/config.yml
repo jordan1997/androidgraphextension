@@ -9,22 +9,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: prepare
-          command: touch local.properties
-      - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-      - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
-      - save_cache:
-          paths:
-            - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Run Tests
-          command: ./gradlew check test -x androidgraphextension:bintrayUpload
+          command: ./gradlew testDebugUnitTest
       - store_artifacts:
-          path: app/build/reports
+          path: androidgraphextension/build/reports
           destination: reports
       - store_test_results:
-          path: app/build/test-results
+          path: androidgraphextension/build/test-results
