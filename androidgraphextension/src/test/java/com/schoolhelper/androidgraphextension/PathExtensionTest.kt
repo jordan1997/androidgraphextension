@@ -5,13 +5,13 @@ import android.graphics.PointF
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
+import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
-import org.mockito.Mockito.validateMockitoUsage
 import org.mockito.MockitoAnnotations
+import org.mockito.junit.MockitoJUnitRunner
 
-
-
+@RunWith(MockitoJUnitRunner::class)
 class PathExtensionTest {
 	
 	@Mock
@@ -50,6 +50,6 @@ class PathExtensionTest {
 	
 	@After
 	fun validate() {
-		validateMockitoUsage()
+		Mockito.validateMockitoUsage()
 	}
 }
