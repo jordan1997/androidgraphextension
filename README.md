@@ -8,6 +8,11 @@ A library for more easy work with the android canvas
 
 `dev` [![CircleCI](https://circleci.com/gh/jordan1997/androidgraphextension/tree/dev.svg?style=svg)](https://circleci.com/gh/jordan1997/androidgraphextension/tree/dev)
 
+# Add to project
+```groovy
+implementation 'com.schoolhelper.graphextension:graphextension:1.1.1'
+```
+
 # The library include extension methods
 
 ## Path
