@@ -21,7 +21,7 @@ fun Path.quadTo(previewPoint: PointF, point: PointF) = this.quadTo(
 		(previewPoint.x + point.x) / 2F,
 		(previewPoint.y + point.y) / 2F)
 
-fun List<PointF>.toPath(): Path {
+fun List<PointF>.toQuadPath(): Path {
 	if (this.size < 2) {
 		return Path()
 	}
