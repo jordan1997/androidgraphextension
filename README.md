@@ -3,6 +3,11 @@ A library for more easy work with the android canvas
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Branchs stastus
+`master` [![CircleCI](https://circleci.com/gh/jordan1997/androidgraphextension/tree/master.svg?style=svg)](https://circleci.com/gh/jordan1997/androidgraphextension/tree/master)
+
+`dev` [![CircleCI](https://circleci.com/gh/jordan1997/androidgraphextension/tree/dev.svg?style=svg)](https://circleci.com/gh/jordan1997/androidgraphextension/tree/dev)
+
 # The library include extension methods
 
 ## Path
