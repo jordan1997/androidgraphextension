@@ -2,11 +2,15 @@ package com.schoolhelper.androidgraphextension
 
 import android.graphics.Path
 import android.graphics.PointF
+import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
+import org.mockito.Mockito.validateMockitoUsage
 import org.mockito.MockitoAnnotations
+
+
 
 class PathExtensionTest {
 	
@@ -42,5 +46,10 @@ class PathExtensionTest {
 		path.offset(point)
 		
 		Mockito.verify(path).offset(point.x, point.y)
+	}
+	
+	@After
+	fun validate() {
+		validateMockitoUsage()
 	}
 }
