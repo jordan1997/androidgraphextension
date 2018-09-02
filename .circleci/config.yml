@@ -13,9 +13,9 @@ jobs:
           command: ./gradlew androidDependencies
       - run:
           name: Run Tests
-          command: ./gradlew check test
+          command: ./gradlew testDebugUnitTest
       - store_artifacts:
-          path: app/build/reports
+          path: androidgraphextension/build/reports
           destination: reports
       - store_test_results:
-          path: app/build/test-results
+          path: androidgraphextension/build/test-results
