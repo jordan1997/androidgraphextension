@@ -7,12 +7,14 @@ jobs:
     environment:
       JVM_OPTS: -Xmx3200m
     steps:
+      - run:
+          name: prepare
+          command: touch local.properties
       - checkout
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Download Dependencies
-          command: touch code/local.properties
           command: ./gradlew androidDependencies
       - save_cache:
           paths:
