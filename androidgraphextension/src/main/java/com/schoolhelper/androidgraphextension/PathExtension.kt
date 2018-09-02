@@ -2,9 +2,12 @@ package com.schoolhelper.androidgraphextension
 
 import android.graphics.Path
 import android.graphics.PointF
-import android.view.MotionEvent
-import org.apache.commons.math3.geometry.euclidean.twod.Vector2D
 
+/**
+ * Set the beginning of the next contour to the point.
+ *
+ * @param point The coordinate of the start of a new contour
+ */
 fun Path.moveTo(point: PointF) = this.moveTo(point.x, point.y)
 
 fun Path.lineTo(point: PointF) = this.lineTo(point.x, point.y)
