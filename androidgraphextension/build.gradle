@@ -1,34 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.jfrog.bintray'
-apply plugin: 'com.github.dcendents.android-maven'
-
-ext {
-
-    userOrg = 'schoolhelper'
-
-    bintrayRepo = 'androidgraphextension'
-    bintrayName = "com.schoolhelper.graphextension"
-
-    publishedGroupId = 'com.schoolhelper.graphextension'
-    libraryName = 'androidgraphextension'
-    artifact = 'androidgraphextension'
-
-    libraryDescription = 'A library for more easy work with android canvas'
-
-    siteUrl = 'https://github.com/jordan1997/GraphExtension'
-    gitUrl = 'https://github.com/jordan1997/GraphExtension.git'
-
-    libraryVersion = '1.0.0'
-
-    developerId = 'schoolhelper'
-    developerName = 'Vova Stelmashchuk'
-    developerEmail = 'vovochkastelmashchuk@gmail.com'
-
-    licenseName = 'MIT License'
-    licenseUrl = 'https://opensource.org/licenses/MIT'
-    allLicenses = ["MIT"]
-}
 
 android {
     compileSdkVersion 28
@@ -59,8 +30,3 @@ dependencies {
 repositories {
     mavenCentral()
 }
-
-//if (project.rootProject.file('local.properties').exists()) {
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
-//}
