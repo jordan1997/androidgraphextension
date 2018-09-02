@@ -41,3 +41,14 @@ val path = samplePoints.toQuadPath()
 canvas.drawPath(path, paint)
 
 ```
+
+## PointF
+
+### Easy times for point
+```kotlin
+
+val point = PointF(5F, 5F)
+val scaleUpPoint = point * 5
+val scaleDownPoint = point / 5
+
+```
