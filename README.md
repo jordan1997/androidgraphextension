@@ -13,14 +13,13 @@ A library for more easy work with the android canvas
 implementation 'com.schoolhelper.graphextension:graphextension:1.1.1'
 ```
 
-# The library include extension methods
+# The library include following kotlin extension methods
 
-## Path
+## PointF
 
 ### Easy add point to path
 
 ```kotlin
-
 val point1 = PointF(2, 2)
 val point2 = PointF(4, 4)
 val point3 = PointF(6, 6)
@@ -42,6 +41,16 @@ view.setOnTouchListener { v, event ->
 
 ```
 
+### Easy times for point
+```kotlin
+
+val point = PointF(5F, 5F)
+val scaleUpPoint = point * 5
+val scaleDownPoint = point / 5
+
+```
+## Path
+
 ### Easy make Quad Path
 
 ```kotlin
@@ -49,16 +58,5 @@ view.setOnTouchListener { v, event ->
 val samplePoints = listOf<PointF>() // list must be init
 val path = samplePoints.toQuadPath()
 canvas.drawPath(path, paint)
-
-```
-
-## PointF
-
-### Easy times for point
-```kotlin
-
-val point = PointF(5F, 5F)
-val scaleUpPoint = point * 5
-val scaleDownPoint = point / 5
 
 ```

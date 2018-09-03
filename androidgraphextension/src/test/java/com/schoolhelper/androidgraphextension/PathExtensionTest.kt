@@ -48,6 +48,17 @@ class PathExtensionTest {
 		Mockito.verify(path).offset(point.x, point.y)
 	}
 	
+	@Test
+	fun testQuadTo() {
+		val controlPoint = PointF()
+		controlPoint.x = 5F
+		controlPoint.y = 5F
+		path.quadTo(controlPoint, point)
+		
+		Mockito.verify(path).quadTo(controlPoint.x, controlPoint.y, point.x, point.y)
+	}
+	
+	
 	@After
 	fun validate() {
 		Mockito.validateMockitoUsage()

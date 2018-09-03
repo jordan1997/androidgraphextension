@@ -16,10 +16,12 @@ fun Path.setLastPoint(point: PointF) = this.setLastPoint(point.x, point.y)
 
 fun Path.offset(point: PointF) = this.offset(point.x, point.y)
 
-fun Path.quadTo(previewPoint: PointF, point: PointF) = this.quadTo(
-		previewPoint.x, previewPoint.y,
-		(previewPoint.x + point.x) / 2F,
-		(previewPoint.y + point.y) / 2F)
+fun Path.quadTo(controlPoint: PointF, point: PointF) = this.quadTo(controlPoint.x, controlPoint.y, point.x, point.y)
+
+fun Path.quadToByPreviousPoint(PreviousPoint: PointF, point: PointF) = this.quadTo(
+		PreviousPoint.x, PreviousPoint.y,
+		(PreviousPoint.x + point.x) / 2F,
+		(PreviousPoint.y + point.y) / 2F)
 
 fun List<PointF>.toQuadPath(): Path {
 	if (this.size < 2) {
@@ -28,7 +30,7 @@ fun List<PointF>.toQuadPath(): Path {
 	val path = Path()
 	path.moveTo(this.first())
 	(1..this.lastIndex).forEach { index ->
-		path.quadTo(this[index - 1], this[index])
+		path.quadToByPreviousPoint(this[index - 1], this[index])
 	}
 	path.setLastPoint(this.last())
 	return path
