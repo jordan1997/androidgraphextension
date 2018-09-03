@@ -17,20 +17,6 @@ implementation 'com.schoolhelper.graphextension:graphextension:1.1.1'
 
 ## PointF
 
-### Easy add point to path
-
-```kotlin
-val point1 = PointF(2, 2)
-val point2 = PointF(4, 4)
-val point3 = PointF(6, 6)
-val path = Path()
-
-path.moveTo(point1)
-path.lineTo(point2)
-path.setLastPoint(point3)
-
-```
-
 ### Easy make point base on event
 ```kotlin
 
@@ -51,6 +37,20 @@ val scaleDownPoint = point / 5
 ```
 ## Path
 
+### Easy add point to path
+
+```kotlin
+val point1 = PointF(2, 2)
+val point2 = PointF(4, 4)
+val point3 = PointF(6, 6)
+val path = Path()
+
+path.moveTo(point1)
+path.lineTo(point2)
+path.setLastPoint(point3)
+
+```
+
 ### Easy make Quad Path
 
 ```kotlin
@@ -60,3 +60,4 @@ val path = samplePoints.toQuadPath()
 canvas.drawPath(path, paint)
 
 ```
+
