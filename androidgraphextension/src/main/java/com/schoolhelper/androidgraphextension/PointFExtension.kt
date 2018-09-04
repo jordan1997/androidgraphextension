@@ -1,9 +1,14 @@
 package com.schoolhelper.androidgraphextension
 
+import android.graphics.Point
 import android.graphics.PointF
 import android.view.MotionEvent
 
 fun PointF(event: MotionEvent) = PointF(event.x, event.y)
+
+fun PointF.toPoint() = Point(this.x.toInt(), this.y.toInt())
+
+fun Point.toPointF() = PointF(x.toFloat(), y.toFloat())
 
 operator fun PointF.unaryMinus() = PointF(-this.x, -this.y)
 

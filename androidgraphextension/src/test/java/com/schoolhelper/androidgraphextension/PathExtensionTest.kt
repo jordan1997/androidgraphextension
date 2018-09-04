@@ -1,51 +1,98 @@
 package com.schoolhelper.androidgraphextension
 
 import android.graphics.Path
+import android.graphics.Point
 import android.graphics.PointF
+import io.mockk.*
+import io.mockk.impl.annotations.MockK
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.mockito.Mock
-import org.mockito.Mockito
-import org.mockito.MockitoAnnotations
-import org.mockito.junit.MockitoJUnitRunner
 
-@RunWith(MockitoJUnitRunner::class)
 class PathExtensionTest {
 	
-	@Mock
+	@MockK(relaxUnitFun = true)
 	lateinit var path: Path
 	
-	@Mock
-	lateinit var point: PointF
+	@MockK(relaxUnitFun = true)
+	lateinit var pointF: PointF
+	
+	@MockK(relaxUnitFun = true)
+	lateinit var point: Point
+	
+	val x = 20
+	val y = 30
 	
 	@Before
 	fun setup() {
-		MockitoAnnotations.initMocks(this)
-		point.x = 33F
-		point.y = 76F
+		MockKAnnotations.init(this, relaxUnitFun = true)
+		pointF.x = 20F
+		pointF.y = 30F
+		
+		point.x = 20
+		point.y = 30
+		
+		mockkStatic("com.schoolhelper.androidgraphextension.PointFExtensionKt")
+		
+		every {
+			point.toPointF()
+		} returns pointF
 	}
 	
 	@Test
-	fun testMoveTo() {
+	fun testMoveToPointF() {
+		path.moveTo(pointF)
+		
+		verify { path.moveTo(pointF.x, pointF.y) }
+	}
+	
+	@Test
+	fun testMoveToPoint() {
 		path.moveTo(point)
 		
-		Mockito.verify(path).moveTo(point.x, point.y)
+		verify { path.moveTo(point.x.toFloat(), point.y.toFloat()) }
 	}
 	
 	@Test
-	fun testLineTo() {
+	fun testMoveToInt() {
+		path.moveTo(x, y)
+		
+		verify { path.moveTo(x.toFloat(), y.toFloat()) }
+	}
+	
+	@Test
+	fun testLineToPointF() {
+		path.lineTo(pointF)
+		
+		verify { path.lineTo(pointF.x, pointF.y) }
+	}
+	
+	@Test
+	fun testLineToPoint() {
 		path.lineTo(point)
 		
-		Mockito.verify(path).lineTo(point.x, point.y)
+		verify { path.lineTo(point.x, point.y) }
 	}
 	
 	@Test
-	fun testOffSet() {
+	fun testLineToInt() {
+		path.lineTo(x, y)
+		
+		verify { path.lineTo(x.toFloat(), y.toFloat()) }
+	}
+	
+	@Test
+	fun testOffSetPointF() {
+		path.offset(pointF)
+		
+		verify { path.offset(pointF.x, pointF.y) }
+	}
+	
+	@Test
+	fun testOffSetPoint() {
 		path.offset(point)
 		
-		Mockito.verify(path).offset(point.x, point.y)
+		verify { path.offset(point.x, point.y) }
 	}
 	
 	@Test
@@ -53,14 +100,13 @@ class PathExtensionTest {
 		val controlPoint = PointF()
 		controlPoint.x = 5F
 		controlPoint.y = 5F
-		path.quadTo(controlPoint, point)
+		path.quadTo(controlPoint, pointF)
 		
-		Mockito.verify(path).quadTo(controlPoint.x, controlPoint.y, point.x, point.y)
+		verify { path.quadTo(controlPoint.x, controlPoint.y, pointF.x, pointF.y) }
 	}
 	
-	
 	@After
-	fun validate() {
-		Mockito.validateMockitoUsage()
+	fun after() {
+		unmockkAll()
 	}
 }
