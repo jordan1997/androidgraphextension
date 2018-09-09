@@ -11,23 +11,92 @@ import android.graphics.PointF
  */
 fun Path.moveTo(point: PointF) = this.moveTo(point.x, point.y)
 
+/**
+ * Set the beginning of the next contour to the point (x,y).
+ *
+ * @param point The point of the start of a new contour
+ */
 fun Path.moveTo(point: Point) = this.moveTo(point.toPointF())
 
+/**
+ * Set the beginning of the next contour to the point (x,y).
+ *
+ * @param x The x-coordinate of the start of a new contour
+ * @param y The y-coordinate of the start of a new contour
+ */
 fun Path.moveTo(x: Int, y: Int) = this.moveTo(x.toFloat(), y.toFloat())
 
+/**
+ * Add a line from the last point to the specified point (x,y).
+ * If no moveTo() call has been made for this contour, the first point is
+ * automatically set to (0,0).
+ *
+ * @param point The point (x, y) of the end of a line
+ */
 fun Path.lineTo(point: PointF) = this.lineTo(point.x, point.y)
 
+/**
+ * Add a line from the last point to the specified point (x,y).
+ * If no moveTo() call has been made for this contour, the first point is
+ * automatically set to (0,0).
+ *
+ * @param point The point (x, y) of the end of a line
+ */
 fun Path.lineTo(point: Point) = this.lineTo(point.x, point.y)
 
+/**
+ * Add a line from the last point to the specified point (x,y).
+ * If no moveTo() call has been made for this contour, the first point is
+ * automatically set to (0,0).
+ *
+ * @param x The x-coordinate of the end of a line
+ * @param y The y-coordinate of the end of a line
+ */
 fun Path.lineTo(x: Int, y: Int) = this.lineTo(x.toFloat(), y.toFloat())
 
+/**
+ * Sets the last point of the path.
+ *
+ * @param point The point for the last point
+ */
 fun Path.setLastPoint(point: PointF) = this.setLastPoint(point.x, point.y)
 
+/**
+ * Sets the last point of the path.
+ *
+ * @param point The point for the last point
+ */
+fun Path.setLastPoint(point: Point) = this.setLastPoint(point.toPointF())
+
+/**
+ * Sets the last point of the path.
+ *
+ * @param dx The new X coordinate for the last point
+ * @param dy The new Y coordinate for the last point
+ */
+fun Path.setLastPoint(dx: Int, dy: Int) = this.setLastPoint(dx.toFloat(), dy.toFloat())
+
+/**
+ * Offset the path by pointF
+ *
+ * @param point The amount in the (X,Y) direction to offset the entire path
+ */
 fun Path.offset(point: PointF) = this.offset(point.x, point.y)
 
+/**
+ * Offset the path by point
+ *
+ * @param point The amount in the (X,Y) direction to offset the entire path
+ */
 fun Path.offset(point: Point) = this.offset(point.toPointF())
 
-fun Path.offset(x: Int, y: Int) = this.offset(x.toFloat(), y.toFloat())
+/**
+ * Offset the path by (dx,dy)
+ *
+ * @param dx The amount in the X direction to offset the entire path
+ * @param dy The amount in the Y direction to offset the entire path
+ */
+fun Path.offset(dx: Int, dy: Int) = this.offset(dx.toFloat(), dy.toFloat())
 
 /**
  * Add a closed rectangle contour to the path

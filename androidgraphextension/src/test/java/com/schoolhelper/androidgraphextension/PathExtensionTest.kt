@@ -143,6 +143,27 @@ class PathExtensionTest {
 	}
 	
 	@Test
+	fun testSetLastPointF() {
+		path.setLastPoint(pointF1)
+		
+		verify { path.setLastPoint(x1.toFloat(), y1.toFloat()) }
+	}
+	
+	@Test
+	fun testSetLastPoint() {
+		path.setLastPoint(point1)
+		
+		verify { path.setLastPoint(x1.toFloat(), y1.toFloat()) }
+	}
+	
+	@Test
+	fun testSetLastPointInt() {
+		path.setLastPoint(x1, y1)
+		
+		verify { path.setLastPoint(x1.toFloat(), y1.toFloat()) }
+	}
+	
+	@Test
 	fun testQuadTo() {
 		val controlPoint = PointF()
 		controlPoint.x = 5F
