@@ -15,84 +15,131 @@ class PathExtensionTest {
 	lateinit var path: Path
 	
 	@MockK(relaxUnitFun = true)
-	lateinit var pointF: PointF
+	lateinit var pointF1: PointF
 	
 	@MockK(relaxUnitFun = true)
-	lateinit var point: Point
+	lateinit var pointF2: PointF
 	
-	val x = 20
-	val y = 30
+	@MockK(relaxUnitFun = true)
+	lateinit var point1: Point
+	
+	@MockK(relaxUnitFun = true)
+	lateinit var point2: Point
+	
+	private val x1 = 20
+	private val y1 = 30
+	
+	private val x2 = 20
+	private val y2 = 30
 	
 	@Before
 	fun setup() {
 		MockKAnnotations.init(this, relaxUnitFun = true)
-		pointF.x = 20F
-		pointF.y = 30F
+		pointF1.x = x1.toFloat()
+		pointF1.y = y1.toFloat()
 		
-		point.x = 20
-		point.y = 30
+		point1.x = x1
+		point1.y = y1
+		
+		pointF2.x = x2.toFloat()
+		pointF2.y = y2.toFloat()
+		
+		point2.x = x2
+		point2.y = y2
 		
 		mockkStatic("com.schoolhelper.androidgraphextension.PointFExtensionKt")
 		
 		every {
-			point.toPointF()
-		} returns pointF
+			point1.toPointF()
+		} returns pointF1
+		
+		every {
+			point2.toPointF()
+		} returns pointF2
 	}
 	
 	@Test
 	fun testMoveToPointF() {
-		path.moveTo(pointF)
+		path.moveTo(pointF1)
 		
-		verify { path.moveTo(pointF.x, pointF.y) }
+		verify { path.moveTo(pointF1.x, pointF1.y) }
 	}
 	
 	@Test
 	fun testMoveToPoint() {
-		path.moveTo(point)
+		path.moveTo(point1)
 		
-		verify { path.moveTo(point.x.toFloat(), point.y.toFloat()) }
+		verify { path.moveTo(point1.x.toFloat(), point1.y.toFloat()) }
 	}
 	
 	@Test
 	fun testMoveToInt() {
-		path.moveTo(x, y)
+		path.moveTo(x1, y1)
 		
-		verify { path.moveTo(x.toFloat(), y.toFloat()) }
+		verify { path.moveTo(x1.toFloat(), y1.toFloat()) }
 	}
 	
 	@Test
 	fun testLineToPointF() {
-		path.lineTo(pointF)
+		path.lineTo(pointF1)
 		
-		verify { path.lineTo(pointF.x, pointF.y) }
+		verify { path.lineTo(pointF1.x, pointF1.y) }
 	}
 	
 	@Test
 	fun testLineToPoint() {
-		path.lineTo(point)
+		path.lineTo(point1)
 		
-		verify { path.lineTo(point.x, point.y) }
+		verify { path.lineTo(point1.x, point1.y) }
 	}
 	
 	@Test
 	fun testLineToInt() {
-		path.lineTo(x, y)
+		path.lineTo(x1, y1)
 		
-		verify { path.lineTo(x.toFloat(), y.toFloat()) }
+		verify { path.lineTo(x1.toFloat(), y1.toFloat()) }
 	}
 	
 	@Test
 	fun testOffSetPointF() {
-		path.offset(pointF)
+		path.offset(pointF1)
 		
-		verify { path.offset(pointF.x, pointF.y) }
+		verify { path.offset(pointF1.x, pointF1.y) }
 	}
 	
 	@Test
 	fun testOffSetPoint() {
-		path.offset(point)
+		path.offset(point1)
 		
-		verify { path.offset(point.x, point.y) }
+		verify { path.offset(point1.x, point1.y) }
+	}
+	
+	@Test
+	fun testOffSetInt() {
+		path.offset(x1, y1)
+		
+		verify { path.offset(x1.toFloat(), y1.toFloat()) }
+	}
+	
+	@Test
+	fun testAddRectPointF() {
+		path.addRect(pointF1, pointF2)
+		
+		verify { path.addRect(x1.toFloat(), y1.toFloat(), x2.toFloat(), y2.toFloat(), Path.Direction.CW) }
+	}
+	
+	@Test
+	fun testAddRectPoint() {
+		path.addRect(point1, point2)
+		
+		verify { path.addRect(x1.toFloat(), y1.toFloat(), x2.toFloat(), y2.toFloat(), Path.Direction.CW) }
+	}
+	
+	@Test
+	fun testAddRectInt() {
+		path.addRect(x1, y1, x2, y2)
+		
+		verify { path.addRect(x1.toFloat(), y1.toFloat(), x2.toFloat(), y2.toFloat(), Path.Direction.CW) }
 	}
 	
 	@Test
@@ -100,9 +147,9 @@ class PathExtensionTest {
 		val controlPoint = PointF()
 		controlPoint.x = 5F
 		controlPoint.y = 5F
-		path.quadTo(controlPoint, pointF)
+		path.quadTo(controlPoint, pointF1)
 		
-		verify { path.quadTo(controlPoint.x, controlPoint.y, pointF.x, pointF.y) }
+		verify { path.quadTo(controlPoint.x, controlPoint.y, pointF1.x, pointF1.y) }
 	}
 	
 	@After
