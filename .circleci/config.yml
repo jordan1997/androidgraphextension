@@ -19,6 +19,6 @@ jobs:
           destination: reports
       - store_test_results:
           path: androidgraphextension/build/test-results
-      - test_repost:
+      - run:
           name: Coverage
           command: <(curl -s https://codecov.io/bash)
