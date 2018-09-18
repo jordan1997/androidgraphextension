@@ -2,6 +2,7 @@
 A library for more easy work with the android canvas
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Maven Central](https://img.shields.io/maven-central/v/tech.schoolhelper/graphextension.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tech.schoolhelper%22%20AND%20a:%22graphextension%22)
 
 ## Branches stastus
 `master` [![CircleCI](https://circleci.com/gh/jordan1997/androidgraphextension/tree/master.svg?style=svg)](https://circleci.com/gh/jordan1997/androidgraphextension/tree/master)
@@ -10,7 +11,7 @@ A library for more easy work with the android canvas
 
 # Add to project
 ```groovy
-implementation 'com.schoolhelper.graphextension:graphextension:1.1.1'
+implementation 'tech.schoolhelper:graphextension:0.1'
 ```
 
 The library included a lot extension for work with path, point and pointF object. Included following method:
