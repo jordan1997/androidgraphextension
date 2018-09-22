@@ -9,9 +9,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: pre-dependencies
-          command: sudo pip install codecov
-      - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
       - run:
