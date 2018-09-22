@@ -16,7 +16,7 @@ jobs:
           command: ./gradlew androidDependencies
       - run:
           name: Run Tests
-          command: ./gradlew --info testDebugUnitTest coverage
+          command: ./gradlew --info testDebugUnitTest
       - run:
           name: post-test
           command: codecov
