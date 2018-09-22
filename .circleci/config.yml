@@ -19,9 +19,4 @@ jobs:
           command: ./gradlew jacocoTestDebugUnitTestReport
       - run:
           name: post-test
-          command: codecov
-      - store_artifacts:
-          path: androidgraphextension/build/reports
-          destination: reports
-      - store_test_results:
-          path: androidgraphextension/build/test-results
+          command: bash <(curl -s https://codecov.io/bash)
