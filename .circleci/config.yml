@@ -13,7 +13,7 @@ jobs:
           command: ./gradlew androidDependencies
       - run:
           name: Run Tests
-          command: ./gradlew clean build jacocoTestDebugUnitTestReport
+          command: ./gradlew jacocoTestDebugUnitTestReport
       # set up xml path for code climate
       - run:
           name: Set jacoco.xml path for code climate
