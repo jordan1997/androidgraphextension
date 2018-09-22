@@ -13,7 +13,7 @@ jobs:
           command: ./gradlew androidDependencies
       - run:
           name: Run Tests
-          command: ./gradlew testDebugUnitTest
+          command: ./gradlew jacocoTestReportDebug
       - store_artifacts:
           path: androidgraphextension/build/reports
           destination: reports
