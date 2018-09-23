@@ -1,19 +1,22 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
+apply plugin: 'jacoco-android'
+apply from: 'maven-push.gradle'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 27
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 27
         versionCode 1
-        versionName "1.0"
+        versionName "0.1"
     }
 
     buildTypes {
+        debug {
+            testCoverageEnabled = true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -27,13 +30,50 @@ dependencies {
     implementation "org.apache.commons:commons-math3:3.6.1"
 
     testImplementation 'junit:junit:4.12'
-    testImplementation 'org.mockito:mockito-core:2.18.3'
-
+    testImplementation "io.mockk:mockk:1.8.7"
 }
 repositories {
     mavenCentral()
 }
 
-if (!System.getenv('CI')) {
-    apply from: 'https://raw.githubusercontent.com/jordan1997/jcenter-config/master/deploy.gradle'
+project.afterEvaluate {
+    //Gather build type and product flavor names in a list
+    def buildTypes = android.buildTypes.collect { type -> type.name }
+    def productFlavors = android.productFlavors.collect { flavor -> flavor.name }
+    if (!productFlavors) productFlavors.add('')
+
+    productFlavors.each { productFlavorName ->
+        buildTypes.each { buildTypeName ->
+            //Define the sourceName and the sourcePath.
+            def sourceName, sourcePath
+            if (!productFlavorName) {
+                sourceName = sourcePath = "${buildTypeName}"
+            } else {
+                sourceName = "${productFlavorName}${buildTypeName.capitalize()}"
+                sourcePath = "${productFlavorName}/${buildTypeName}"
+            }
+
+            def testTaskName = "test${sourceName.capitalize()}UnitTest"
+
+            task "create${sourceName.capitalize()}UnitTestCoverageReport"(type: JacocoReport, dependsOn: "$testTaskName") {
+                group = "Reporting"
+                description = "Generate Jacoco coverage reports on the ${sourceName.capitalize()} build."
+
+                reports {
+                    xml.enabled true
+                    html.enabled true
+                }
+
+                //Directory where the compiled class files are
+                classDirectories =
+                        fileTree(dir: "${project.buildDir}/intermediates/classes/${sourcePath}")
+
+                sourceDirectories = files(["src/main/java",
+                                           "src/$productFlavorName/java",
+                                           "src/$buildTypeName/java"])
+
+                executionData = files("${project.buildDir}/jacoco/${testTaskName}.exec")
+            }
+        }
+    }
 }
