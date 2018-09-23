@@ -1,8 +1,14 @@
-language: java
-jdk:
-  - oraclejdk8
-before_install:
-  - chmod +x gradlew
-  - chmod +x gradle/wrapper/gradle-wrapper.jar
+language: android
+android:
+  components:
+    - android-28
+    - build-tools-27.0.3
+
+env:
+  global:
+   # install timeout in minutes (2 minutes by default)
+    - ADB_INSTALL_TIMEOUT=8
+
+# Run assemble and unit tests
 script:
-  - ./gradlew testDebugUnitTest
+- ./gradlew clean assembleDebug assembleRelease testDebug
