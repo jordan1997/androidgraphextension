@@ -5,11 +5,11 @@ apply from: 'maven-push.gradle'
 apply plugin: 'com.vanniktech.android.junit.jacoco'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 27
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 27
         versionCode 1
         versionName "0.1"
     }
