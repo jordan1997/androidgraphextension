@@ -17,6 +17,6 @@ before_install:
 script:
   - ./gradlew clean testDebugUnitTest jacocoTestDebugUnitTestReport
 after_success:
-  - mv androidgraphextension/build/reports/jacoco/createDebugUnitTestCoverageReport app/build/reports/jacoco/jacocoTestDebugUnitTestReport
-  - mv androidgraphextension/build/reports/jacoco/jacocoTestDebugUnitTestReport/createDebugUnitTestCoverageReport.xml app/build/reports/jacoco/jacocoTestDebugUnitTestReport/jacocoTestDebugUnitTestReport.xml
+  - mv androidgraphextension/build/reports/jacoco/createDebugUnitTestCoverageReport androidgraphextension/build/reports/jacoco/jacocoTestDebugUnitTestReport
+  - mv androidgraphextension/build/reports/jacoco/jacocoTestDebugUnitTestReport/createDebugUnitTestCoverageReport.xml androidgraphextension/build/reports/jacoco/jacocoTestDebugUnitTestReport/jacocoTestDebugUnitTestReport.xml
   - bash <(curl -s https://codecov.io/bash)
