@@ -7,7 +7,7 @@ A library for more easy work with the android canvas
 ## Branches stastus
 `master` [![CircleCI](https://circleci.com/gh/jordan1997/androidgraphextension/tree/master.svg?style=svg)](https://circleci.com/gh/jordan1997/androidgraphextension/tree/master)
 
-`dev` [![CircleCI](https://circleci.com/gh/jordan1997/androidgraphextension/tree/dev.svg?style=svg)](https://circleci.com/gh/jordan1997/androidgraphextension/tree/dev)
+`dev` [![Build Status](https://travis-ci.com/schoolhelper/androidgraphextension.svg?branch=dev)](https://travis-ci.com/schoolhelper/androidgraphextension)
 
 # Add to project
 ```groovy
