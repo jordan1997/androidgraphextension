@@ -15,10 +15,6 @@ before_install:
 
 # Run assemble and unit tests
 script:
-  - ./gradlew clean testDebugUnitTest createDebugUnitTestCoverageReport
-script:
-  # Renaming folder and files of reports so codecov.io can find it
-  - mv app/build/reports/jacoco/createDebugUnitTestCoverageReport app/build/reports/jacoco/jacocoTestDebugUnitTestReport
-  - mv app/build/reports/jacoco/jacocoTestDebugUnitTestReport/createDebugUnitTestCoverageReport.xml app/build/reports/jacoco/jacocoTestDebugUnitTestReport/jacocoTestDebugUnitTestReport.xml
+  - ./gradlew clean testDebugUnitTest jacocoTestDebugUnitTestReport
 after_success:
   - bash <(curl -s https://codecov.io/bash)
