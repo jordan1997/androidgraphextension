@@ -12,17 +12,13 @@ jobs:
           name: Download Dependencies
           command: ./gradlew androidDependencies
       - run:
+          name: Install test reporter
+          command: |
+                curl -L -o "cc-test-reporter" "https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64"
+                sudo chmod +x ./cc-test-reporter
+      - run:
           name: Run Tests
-          command: ./gradlew jacocoTestDebugUnitTestReport
-      # set up xml path for code climate
-      - run:
-          name: Set jacoco.xml path for code climate
-          command: JACOCO_SOURCE_PATH=src/main/java ./cc-test-reporter format-coverage ./build/reports/jacoco/test/jacocoTestReport.xml --input-type jacoco
-      # upload coverage on code climate
-      - run:
-          name: Upload code climate report
-          command: ./cc-test-reporter upload-coverage -r $CC_TEST_REPORTER_ID
-          when: on_success
+          command: ./gradlew testDebugUnitTest jacocoTestDebugUnitTestReport
       - store_artifacts:
           path: androidgraphextension/build/reports
           destination: reports
