@@ -15,9 +15,9 @@ before_install:
 
 # Run assemble and unit tests
 script:
-  - ./gradlew clean testDebugUnitTest jacocoTestDebugUnitTestReport
+  - ./gradlew clean testDebugUnitTest jacocoTestDebugUnitTestReport createDebugUnitTestCoverageReport
 after_success:
-  - ls -all
+  - ls androidgraphextension/build/reports -all
   - mv androidgraphextension/build/reports/jacoco/createDebugUnitTestCoverageReport androidgraphextension/build/reports/jacoco/jacocoTestDebugUnitTestReport
   - mv androidgraphextension/build/reports/jacoco/jacocoTestDebugUnitTestReport/createDebugUnitTestCoverageReport.xml androidgraphextension/build/reports/jacoco/jacocoTestDebugUnitTestReport/jacocoTestDebugUnitTestReport.xml
   - bash <(curl -s https://codecov.io/bash)
