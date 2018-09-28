@@ -15,6 +15,6 @@ before_install:
 
 # Run assemble and unit tests
 script:
-  - ./gradlew clean testDebugUnitTest jacocoTestDebugUnitTestReport
+  - ./gradlew clean testDebugUnitTest jacocoTestDebugUnitTestReport createDebugUnitTestCoverageReport
 after_success:
   - bash <(curl -s https://codecov.io/bash)

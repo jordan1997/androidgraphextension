@@ -48,6 +48,7 @@ class PathExtensionTest {
 		point2.y = y2
 		
 		mockkStatic("com.schoolhelper.androidgraphextension.PointFExtensionKt")
+		mockkStatic("com.schoolhelper.androidgraphextension.PointExtensionKt")
 		
 		every {
 			point1.toPointF()

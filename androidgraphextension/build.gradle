@@ -61,12 +61,12 @@ project.afterEvaluate {
 
                 reports {
                     xml.enabled true
+		    xml.destination "${project.buildDir}/reports/jacoco/report.xml"
                     html.enabled true
                 }
 
                 //Directory where the compiled class files are
-                classDirectories =
-                        fileTree(dir: "${project.buildDir}/intermediates/classes/${sourcePath}")
+                classDirectories = fileTree(dir: "${project.buildDir}/intermediates/classes/${sourcePath}")
 
                 sourceDirectories = files(["src/main/java",
                                            "src/$productFlavorName/java",

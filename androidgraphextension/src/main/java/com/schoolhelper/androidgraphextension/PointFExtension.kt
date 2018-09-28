@@ -8,13 +8,15 @@ fun PointF(event: MotionEvent) = PointF(event.x, event.y)
 
 fun PointF.toPoint() = Point(this.x.toInt(), this.y.toInt())
 
-fun Point.toPointF() = PointF(x.toFloat(), y.toFloat())
-
 operator fun PointF.unaryMinus() = PointF(-this.x, -this.y)
 
-operator fun PointF.minus(a: Float) = PointF(this.x - a, this.y - a)
+operator fun PointF.minus(a: Float) = this.apply {
+	this.offset(-a, -a)
+}
 
-operator fun PointF.plus(point: PointF) = PointF(this.x + point.x, this.y + point.y)
+operator fun PointF.plus(point: PointF) = this.apply {
+	this.offset(point.x, point.y)
+}
 
 operator fun PointF.times(k: Double) = PointF((this.x * k).toFloat(), (this.y * k).toFloat())
 
