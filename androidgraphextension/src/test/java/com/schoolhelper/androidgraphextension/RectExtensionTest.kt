@@ -5,6 +5,7 @@ import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.mockkStatic
+import io.mockk.verify
 import org.junit.Before
 import org.junit.Test
 
@@ -19,7 +20,7 @@ class RectExtensionTest {
 	@Before
 	fun setup() {
 		MockKAnnotations.init(this, relaxUnitFun = true)
-		
+		mockkStatic("android.graphics.Point")
 		mockkStatic("android.graphics.Rect")
 		
 		every {
@@ -33,8 +34,9 @@ class RectExtensionTest {
 	
 	@Test
 	fun testGetCenter() {
-		val point = rect.getCenter()
+		rect.getCenter()
 		
-		point.x shl (centerX / 2)
+		verify { rect.centerX() }
+		verify { rect.centerY() }
 	}
 }

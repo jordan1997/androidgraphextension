@@ -35,7 +35,7 @@ fun Rect.contains(x: Float, y: Float) = this.contains(x.toInt(), y.toInt())
 	*         less than the computed value.
 	*/
 
-fun Rect.getCenter() = Point(this.centerX(), this.centerX())
+fun Rect.getCenter() = Point(this.centerX(), this.centerY())
 
 /**
 	* Returns true if the rectangle is not empty (right >= left or bottom >= top)
