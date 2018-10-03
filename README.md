@@ -51,6 +51,11 @@ The library included a lot extension for work with path, point and pointF object
 - div `point / Float`
 - div `point / Int`
 
+### The library included operators for the Rect(`android.graphics.Rect`)
+- Rect.contains(event: MotionEvent)
+- Rect.contains(Float, Float)
+- Rect.isNotEmpty
+
 ### Easy make Quad Path
 
 ```kotlin
