@@ -12,7 +12,7 @@ A library for more easy work with the android canvas
 
 # Add to project
 ```groovy
-implementation 'tech.schoolhelper:graphextension:0.1.1'
+implementation 'tech.schoolhelper:graphextension:0.2'
 ```
 
 The library included a lot extension for work with path, point and pointF object. Included following method:
