@@ -12,11 +12,15 @@ A library for more easy work with the android canvas
 
 # Add to project
 ```groovy
-implementation 'tech.schoolhelper:graphextension:0.1.1'
+implementation 'tech.schoolhelper:graphextension:0.2.1'
 ```
 
-The library included a lot extension for work with path, point and pointF object. Included following method:
+# The library include following kotlin extension methods
 
+The library included a lot extension for work with path, point and pointF object. Included following method:
+## PointF
+
+### The library included following for path (`android.graphics.Path`):
 - Path.moveTo(PointF)
 - Path.moveTo(Point)
 - Path.moveTo(Int, Int)
@@ -24,28 +28,48 @@ The library included a lot extension for work with path, point and pointF object
 - Path.lineTo(Point)
 - Path.lineTo(Int, Int)
 - Path.setLastPoint(PointF)
+- Path.setLastPoint(Point)
+- Path.setLastPoint(Int, Int)
 - Path.offset(PointF)
 - Path.offset(Point)
 - Path.offset(Int, Int)
 - Path.addRect(PointF, PointF)
 - Path.addRect(PointF, PointF, Path.Direction)
+- Path.addRect(Int, Int, Int)
+- Path.addRect(Float, Float, Float)
+- Path.quadTo(controlPoint: PointF, point: PointF)
+- Path.quadToByPreviousPoint(previousPoint: PointF, point: PointF)
 
-The library included operators for pointF:
-- unaryMinus (val point = -somePoint)
-- minus (pointFa - pointFb)
-- plus (pointFa + pointFb)
-- times (pointF * Double)
-- times (pointF * Float)
-- times (pointF * Int)
-- div (pointF / Double)
-- div (pointF / Float)
-- div (pointF / Int)
+### The library included operators for Point(`android.graphics.Point`) and PointF (`android.graphics.PointF`):
+- unaryMinus `val point = -somePoint`
+- minus `pointA - pointB`
+- plus `pointA + pointB`
+- times `point * Double`
+- times `point * Float`
+- times `point * Int`
+- div `point / Double`
+- div `point / Float`
+- div `point / Int`
 
-# The library include following kotlin extension methods
+### The library included operators for the Rect(`android.graphics.Rect`)
+- Rect.contains(event: MotionEvent)
+- Rect.contains(Float, Float)
+- Rect.isNotEmpty
 
-## PointF
+### Easy make Quad Path
 
-### Easy make point base on event
+```kotlin
+
+val samplePoints = listOf<PointF>() // list must be init
+val path = samplePoints.toQuadPath()
+canvas.drawPath(path, paint)
+
+```
+
+
+# Samples
+
+## Easy make point base on event
 ```kotlin
 
 view.setOnTouchListener { v, event ->
@@ -54,7 +78,7 @@ view.setOnTouchListener { v, event ->
 }
 
 ```
-### Easy times for point
+## Easy times for point
 ```kotlin
 
 val point = PointF(5F, 5F)
@@ -63,16 +87,16 @@ val scaleDownPoint = point / 5
 
 ```
 
-### Convert
+## Convert
 
-#### Point -> PointF
+### Point -> PointF
 ```kotlin
 
 val point = Point(5, 5)
 point.toPointF()
 
 ```
-#### PointF -> Point
+### PointF -> Point
 ```kotlin
 val pointF = PointF(5F, 5F)
 pointF.toPoint()
@@ -93,14 +117,3 @@ path.lineTo(point2)
 path.setLastPoint(point3)
 
 ```
-
-### Easy make Quad Path
-
-```kotlin
-
-val samplePoints = listOf<PointF>() // list must be init
-val path = samplePoints.toQuadPath()
-canvas.drawPath(path, paint)
-
-```
-
