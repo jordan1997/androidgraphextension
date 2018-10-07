@@ -16,5 +16,3 @@ before_install:
 # Run assemble and unit tests
 script:
   - ./gradlew clean testDebugUnitTest
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
