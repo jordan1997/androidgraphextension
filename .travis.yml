@@ -16,16 +16,3 @@ before_install:
 # Run assemble and unit tests
 script:
   - ./gradlew clean testDebugUnitTest dokka
-
-deploy:
-  provider: script   # I'm using "Script Deployment" by travis
-  skip_cleanup: true #prevent Travis CI from resetting your working directory and deleting all changes made during the build
-  script: scripts/deploy.sh
-#  on:
-#    branch: master
-
-# run before deployment
-before_install:
-  - openssl aes-256-cbc -K $encrypted_df7688e28ede_key -iv $encrypted_df7688e28ede_iv
-  -in id_rsa.tar.enc -out id_rsa.tar -d   # decrypt private key
-  - tar xvf id_rsa.tar   # untar the private key to current working directory (root dir of repo)
