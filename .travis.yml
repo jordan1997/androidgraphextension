@@ -25,11 +25,11 @@ script:
 deploy:
   # deploy develop to the staging environment
   - provider: script
-    script: sshpass -p $WEB_PASS scp -r androidgraphextension/build/dokka schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/dev
+    script: sshpass -p $WEB_PASS scp -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/dev
     on:
       branch: dev
   # deploy master to production
   - provider: script
-    script: sshpass -p $WEB_PASS scp -r androidgraphextension/build/dokka schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/master
+    script: sshpass -p $WEB_PASS scp -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/master
     on:
       branch: master
