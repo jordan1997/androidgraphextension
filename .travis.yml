@@ -23,13 +23,13 @@ before_install:
 script:
   - ./gradlew clean testDebugUnitTest dokka
 deploy:
-  # deploy develop to the staging environment
   - provider: script
+    skip_cleanup: true
     script: sshpass -p $WEB_PASS scp -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/dev
     on:
       branch: dev
-  # deploy master to production
   - provider: script
+    skip_cleanup: true
     script: sshpass -p $WEB_PASS scp -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/master
     on:
       branch: master
