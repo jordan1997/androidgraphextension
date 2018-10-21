@@ -22,4 +22,4 @@ before_install:
 # Run assemble and unit tests
 script:
   - ./gradlew clean testDebugUnitTest dokka
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./deploy_doc; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash .deploy_doc; fi'
