@@ -22,4 +22,4 @@ before_install:
 # Run assemble and unit tests
 script:
   - ./gradlew clean testDebugUnitTest dokka
-  - sshpass -p $WEB_PASS scp -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./deploy_doc; fi'
