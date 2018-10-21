@@ -3,6 +3,10 @@ android:
   components:
     - android-28
     - build-tools-27.0.3
+addons:
+  apt:
+    packages:
+    - sshpass
 
 env:
   global:
@@ -16,3 +20,4 @@ before_install:
 # Run assemble and unit tests
 script:
   - ./gradlew clean testDebugUnitTest dokka
+  - sshpass -p $WEB_PASS scp -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/
