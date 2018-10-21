@@ -1,8 +1,14 @@
 language: android
+sudo: true
 android:
   components:
     - android-28
     - build-tools-27.0.3
+addons:
+  ssh_known_hosts: 167.99.94.185
+  apt:
+    packages:
+    - sshpass
 
 env:
   global:
@@ -15,6 +21,10 @@ before_install:
 
 # Run assemble and unit tests
 script:
-  - ./gradlew clean testDebugUnitTest
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - ./gradlew clean testDebugUnitTest dokka
+
+deploy:
+  provider: script
+  script: - sshpass -p $WEB_PASS scp -o stricthostkeychecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/
+  on:
+    branch: master

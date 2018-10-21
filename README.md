@@ -5,6 +5,9 @@ A library for more easy work with the android canvas
 [![Maven Central](https://img.shields.io/maven-central/v/tech.schoolhelper/graphextension.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tech.schoolhelper%22%20AND%20a:%22graphextension%22)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Graph%20Extension-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7167)
 
+## Documentation
+[Documenation](http://schoolhelper.tech/androidgraphextension/dokka/androidgraphextension/index.html)
+
 ## Branches stastus
 `master` [![Build Status](https://travis-ci.com/schoolhelper/androidgraphextension.svg?branch=master)](https://travis-ci.com/schoolhelper/androidgraphextension)
 
