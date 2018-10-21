@@ -4,6 +4,7 @@ import android.graphics.PointF
 import org.apache.commons.math3.util.FastMath
 
 /**
+ 	* <Block for check version>
 	* Method calculate dimention beetween two pointF; Use java math library
 	* @param a start of line
 	* @param b end of line
