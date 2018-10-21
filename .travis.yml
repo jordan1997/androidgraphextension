@@ -5,8 +5,7 @@ android:
     - android-28
     - build-tools-27.0.3
 addons:
-  ssh_know_hosts:
-    - 167.99.94.185
+  ssh_known_hosts: 167.99.94.185
   apt:
     packages:
     - sshpass
