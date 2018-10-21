@@ -23,13 +23,15 @@ before_install:
 script:
   - ./gradlew clean testDebugUnitTest dokka
 deploy:
-  - provider: script
+  - provider: prod
     skip_cleanup: true
+    edge: true
     script: sshpass -p $WEB_PASS scp -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/dev
     on:
       branch: dev
-  - provider: script
+  - provider: staging
     skip_cleanup: true
+    edge: true
     script: sshpass -p $WEB_PASS scp -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/master
     on:
       branch: master
