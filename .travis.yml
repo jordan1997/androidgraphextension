@@ -22,9 +22,4 @@ before_install:
 # Run assemble and unit tests
 script:
   - ./gradlew clean testDebugUnitTest dokka
-
-deploy:
-  provider: script
-  script: - sshpass -p $WEB_PASS scp -o stricthostkeychecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/
-  on:
-    branch: master
+  - sshpass -p $WEB_PASS scp -o stricthostkeychecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/
