@@ -11,9 +11,9 @@ A library for more easy work with the android canvas
 `dev` [Documenation](http://schoolhelper.tech/dev/dokka/androidgraphextension/)
 
 ## Branches stastus
-`master` [![Build Status](https://travis-ci.com/schoolhelper/androidgraphextension.svg?branch=master)](https://travis-ci.com/schoolhelper/androidgraphextension)
+`master` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=master)](https://travis-ci.org/schoolhelper/androidgraphextension)
 
-`dev` [![Build Status](https://travis-ci.com/schoolhelper/androidgraphextension.svg?branch=dev)](https://travis-ci.com/schoolhelper/androidgraphextension)
+`dev` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=dev)](https://travis-ci.org/schoolhelper/androidgraphextension)
 
 # Add to project
 ```groovy
