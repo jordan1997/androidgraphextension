@@ -22,11 +22,11 @@ before_install:
 script:
   - ./gradlew clean testDebugUnitTest dokka
 deploy:
-  - provider: script
-    skip_cleanup: true
-    script: sshpass -e scp -v -o StrictHostKeyChecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/dev
-    on:
-      branch: dev
+#  - provider: script
+#    skip_cleanup: true
+#    script: sshpass -e scp -v -o StrictHostKeyChecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/dev
+#    on:
+#      branch: dev
   - provider: script
     skip_cleanup: true
     script: sshpass -e scp -v -o StrictHostKeyChecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/master
