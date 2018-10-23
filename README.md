@@ -6,7 +6,9 @@ A library for more easy work with the android canvas
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Graph%20Extension-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7167)
 
 ## Documentation
-[Documenation](http://schoolhelper.tech/androidgraphextension/dokka/androidgraphextension/index.html)
+`master` [Documenation](http://schoolhelper.tech/master/dokka/androidgraphextension/)
+
+`dev` [Documenation](http://schoolhelper.tech/dev/dokka/androidgraphextension/)
 
 ## Branches stastus
 `master` [![Build Status](https://travis-ci.com/schoolhelper/androidgraphextension.svg?branch=master)](https://travis-ci.com/schoolhelper/androidgraphextension)
