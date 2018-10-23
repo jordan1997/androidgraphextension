@@ -1,5 +1,4 @@
 language: android
-sudo: true
 android:
   components:
     - android-28
@@ -25,11 +24,11 @@ script:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: sshpass -p $WEB_PASS scp -v -o StrictHostKeyChecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/dev
+    script: sshpass -e scp -v -o StrictHostKeyChecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/dev
     on:
       branch: dev
   - provider: script
     skip_cleanup: true
-    script: sshpass -p $WEB_PASS scp -v -o StrictHostKeyChecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/master
+    script: sshpass -e scp -v -o StrictHostKeyChecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/master
     on:
       branch: master
