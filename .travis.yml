@@ -29,6 +29,6 @@ deploy:
       branch: dev
   - provider: script
     skip_cleanup: true
-    script: sshpass -e scp scp -v -o StrictHostKeyChecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/master
+    script: sshpass -e scp -v -o StrictHostKeyChecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/master
     on:
       branch: master
