@@ -1,4 +1,4 @@
-package com.schoolhelper.androidgraphextension
+package tech.schoolhelper.androidgraphextension
 
 import android.graphics.Path
 import android.graphics.Point
