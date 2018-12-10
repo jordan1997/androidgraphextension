@@ -1,4 +1,4 @@
-package tech.schoolhelper.androidgraphextension
+package tech.schoolhelper.apachmathextension
 
 /**
  * Build a vector by two points
