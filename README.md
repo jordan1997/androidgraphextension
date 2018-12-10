@@ -17,7 +17,7 @@ A library for more easy work with the android canvas
 
 # Add to project
 ```groovy
-implementation 'tech.schoolhelper:graphextension:0.2.1'
+implementation 'tech.schoolhelper:graphextension:0.3.0'
 ```
 
 # The library include following kotlin extension methods
@@ -60,6 +60,18 @@ The library included a lot extension for work with path, point and pointF object
 - Rect.contains(event: MotionEvent)
 - Rect.contains(Float, Float)
 - Rect.isNotEmpty
+- Rect.contains(Point)
+- Rect.contains(PointF)
+- Rect.contains(RectF)
+
+### The library included operators for the RectF(`android.graphics.RectF`)
+- RectF.contains(MotionEvent)
+- RectF.contains(x, y)
+- RectF.contains(Point)
+- RectF.contains(PointF)
+- RectF.contains(Rect)
+- RectF.getCenter()
+- RectF.isNotEmpty
 
 ### Easy make Quad Path
 
@@ -70,7 +82,6 @@ val path = samplePoints.toQuadPath()
 canvas.drawPath(path, paint)
 
 ```
-
 
 # Samples
 
