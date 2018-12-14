@@ -6,26 +6,35 @@ A library for more easy work with the android canvas
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Graph%20Extension-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7167)
 
 ## Documentation
-`master` [Documenation](http://schoolhelper.tech/master/dokka/androidgraphextension/)
+### Android graph extension
+`master` [Documentation](https://schoolhelper.tech/master/dokka/androidgraphextension/)
 
-`dev` [Documenation](http://schoolhelper.tech/dev/dokka/androidgraphextension/)
+`dev` [Documentation](https://schoolhelper.tech/dev/dokka/androidgraphextension/)
+
+### Apache math extension
+`master` [Documentation](https://schoolhelper.tech/master/dokka/apachmathextension/index.html)
+
+`dev` [Documentation](https://schoolhelper.tech/dev/dokka/apachmathextension/index.html)
+
 
 ## Branches stastus
 `master` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=master)](https://travis-ci.org/schoolhelper/androidgraphextension)
 
 `dev` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=dev)](https://travis-ci.org/schoolhelper/androidgraphextension)
 
-# Add to project
+# Add android graph extension to project
 ```groovy
-implementation 'tech.schoolhelper:graphextension:0.3.0'
+implementation 'tech.schoolhelper:graphextension:0.4.0'
 ```
 
-# The library include following kotlin extension methods
+# Add apache math extension to project
+```groovy
+implementation 'tech.schoolhelper:apachextension:0.4.0'
+```
 
-The library included a lot extension for work with path, point and pointF object. Included following method:
-## PointF
+# Graphextension module include following kotlin extension methods
 
-### The library included following for path (`android.graphics.Path`):
+## Module has following for path (`android.graphics.Path`):
 - Path.moveTo(PointF)
 - Path.moveTo(Point)
 - Path.moveTo(Int, Int)
@@ -45,7 +54,7 @@ The library included a lot extension for work with path, point and pointF object
 - Path.quadTo(controlPoint: PointF, point: PointF)
 - Path.quadToByPreviousPoint(previousPoint: PointF, point: PointF)
 
-### The library included operators for Point(`android.graphics.Point`) and PointF (`android.graphics.PointF`):
+## Module has following operators for Point(`android.graphics.Point`) and PointF (`android.graphics.PointF`):
 - unaryMinus `val point = -somePoint`
 - minus `pointA - pointB`
 - plus `pointA + pointB`
@@ -56,38 +65,48 @@ The library included a lot extension for work with path, point and pointF object
 - div `point / Float`
 - div `point / Int`
 
-### The library included operators for the Rect(`android.graphics.Rect`)
-- Rect.contains(event: MotionEvent)
-- Rect.contains(Float, Float)
-- Rect.isNotEmpty
-- Rect.contains(Point)
-- Rect.contains(PointF)
-- Rect.contains(RectF)
+## Module has following operators for the Rect(`android.graphics.Rect`)
+- Rect.contains(event: MotionEvent) : Boolean
+- Rect.contains(Float, Float) : Boolean
+- Rect.isNotEmpty : Boolean
+- Rect.contains(Point) : Boolean
+- Rect.contains(PointF) : Boolean
+- Rect.contains(RectF) : Boolean
 
-### The library included operators for the RectF(`android.graphics.RectF`)
-- RectF.contains(MotionEvent)
-- RectF.contains(x, y)
-- RectF.contains(Point)
-- RectF.contains(PointF)
-- RectF.contains(Rect)
-- RectF.getCenter()
-- RectF.isNotEmpty
+## Module has following operators for the RectF(`android.graphics.RectF`)
+- RectF.contains(MotionEvent) : Boolean 
+- RectF.contains(x, y) : Boolean
+- RectF.contains(Point) : Boolean
+- RectF.contains(PointF) : Boolean
+- RectF.contains(Rect) : Boolean
+- RectF.getCenter() : PointF
+- RectF.isNotEmpty : Boolean
 
-### Easy make Quad Path
+## Easy make Quad Path
 
 ```kotlin
-
 val samplePoints = listOf<PointF>() // list must be init
 val path = samplePoints.toQuadPath()
 canvas.drawPath(path, paint)
 
 ```
 
+# Apachextension module include following kotlin extension methods
+
+## Module has following variables for work with numbers (this variable use FastMath)
+- Float.sqr
+- Double.sqr
+
+## Module has following variables for Vector2D:
+- Vector2D(PointF, PointF) : Vector2D
+- Vector2D(Point, Point) : Vector2D
+- Vector2D.safeNormalize : Vector2D
+- Vector2D.makeNormalVector : Vector2D
+
 # Samples
 
 ## Easy make point base on event
 ```kotlin
-
 view.setOnTouchListener { v, event ->
 	val point = PointF(event)
 	return@setOnTouchListener true
@@ -96,7 +115,6 @@ view.setOnTouchListener { v, event ->
 ```
 ## Easy times for point
 ```kotlin
-
 val point = PointF(5F, 5F)
 val scaleUpPoint = point * 5
 val scaleDownPoint = point / 5
