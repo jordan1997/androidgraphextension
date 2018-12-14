@@ -22,19 +22,19 @@ A library for more easy work with the android canvas
 
 `dev` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=dev)](https://travis-ci.org/schoolhelper/androidgraphextension)
 
-# Add android graph extension to project
+## Add android graph extension to project
 ```groovy
 implementation 'tech.schoolhelper:graphextension:0.4.0'
 ```
 
-# Add apache math extension to project
+## Add apache math extension to project
 ```groovy
 implementation 'tech.schoolhelper:apachextension:0.4.0'
 ```
 
-# Graphextension module include following kotlin extension methods
+## Graphextension module include following kotlin extension methods
 
-## Module has following for path (`android.graphics.Path`):
+### Module has following for path (`android.graphics.Path`):
 - Path.moveTo(PointF)
 - Path.moveTo(Point)
 - Path.moveTo(Int, Int)
@@ -54,7 +54,7 @@ implementation 'tech.schoolhelper:apachextension:0.4.0'
 - Path.quadTo(controlPoint: PointF, point: PointF)
 - Path.quadToByPreviousPoint(previousPoint: PointF, point: PointF)
 
-## Module has following operators for Point(`android.graphics.Point`) and PointF (`android.graphics.PointF`):
+### Module has following operators for Point(`android.graphics.Point`) and PointF (`android.graphics.PointF`):
 - unaryMinus `val point = -somePoint`
 - minus `pointA - pointB`
 - plus `pointA + pointB`
@@ -65,7 +65,7 @@ implementation 'tech.schoolhelper:apachextension:0.4.0'
 - div `point / Float`
 - div `point / Int`
 
-## Module has following operators for the Rect(`android.graphics.Rect`)
+### Module has following operators for the Rect(`android.graphics.Rect`)
 - Rect.contains(event: MotionEvent) : Boolean
 - Rect.contains(Float, Float) : Boolean
 - Rect.isNotEmpty : Boolean
@@ -73,7 +73,7 @@ implementation 'tech.schoolhelper:apachextension:0.4.0'
 - Rect.contains(PointF) : Boolean
 - Rect.contains(RectF) : Boolean
 
-## Module has following operators for the RectF(`android.graphics.RectF`)
+### Module has following operators for the RectF(`android.graphics.RectF`)
 - RectF.contains(MotionEvent) : Boolean 
 - RectF.contains(x, y) : Boolean
 - RectF.contains(Point) : Boolean
@@ -91,13 +91,13 @@ canvas.drawPath(path, paint)
 
 ```
 
-# Apachextension module include following kotlin extension methods
+## Apachextension module include following kotlin extension methods
 
-## Module has following variables for work with numbers (this variable use FastMath)
+### Module has following variables for work with numbers (this variable use FastMath)
 - Float.sqr
 - Double.sqr
 
-## Module has following variables for Vector2D:
+### Module has following variables for Vector2D:
 - Vector2D(PointF, PointF) : Vector2D
 - Vector2D(Point, Point) : Vector2D
 - Vector2D.safeNormalize : Vector2D
