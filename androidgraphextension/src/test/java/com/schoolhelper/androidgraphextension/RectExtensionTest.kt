@@ -8,6 +8,7 @@ import io.mockk.mockkStatic
 import io.mockk.verify
 import org.junit.Before
 import org.junit.Test
+import tech.schoolhelper.androidgraphextension.getCenter
 
 class RectExtensionTest {
 	

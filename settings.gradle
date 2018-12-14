@@ -1,1 +1,1 @@
-include ':androidgraphextension'
+include ':androidgraphextension', ':apachmathextension'

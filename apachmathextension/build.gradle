@@ -13,6 +13,10 @@ android {
         versionName "0.1"
     }
 
+    lintOptions {
+        abortOnError false
+    }
+    
     buildTypes {
         debug {
             testCoverageEnabled true
@@ -21,14 +25,8 @@ android {
     }
 }
 
-dokka {
-    classpath = [new File("$buildDir/other.jar")]
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
-    testImplementation 'junit:junit:4.12'
-    testImplementation "io.mockk:mockk:1.8.7"
+    implementation "org.apache.commons:commons-math3:3.6.1"
 }

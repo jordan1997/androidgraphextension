@@ -8,6 +8,7 @@ import io.mockk.impl.annotations.MockK
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
+import tech.schoolhelper.androidgraphextension.*
 
 class PathExtensionTest {
 	
@@ -47,8 +48,8 @@ class PathExtensionTest {
 		point2.x = x2
 		point2.y = y2
 		
-		mockkStatic("com.schoolhelper.androidgraphextension.PointFExtensionKt")
-		mockkStatic("com.schoolhelper.androidgraphextension.PointExtensionKt")
+		mockkStatic("tech.schoolhelper.androidgraphextension.PointFExtensionKt")
+		mockkStatic("tech.schoolhelper.androidgraphextension.PointExtensionKt")
 		
 		every {
 			point1.toPointF()
