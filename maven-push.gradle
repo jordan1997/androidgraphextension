@@ -97,7 +97,13 @@ afterEvaluate { project ->
         from android.sourceSets.main.java.sourceFiles
     }
 
+    task androidJavaDocJar(type: Jar) {
+        classifier = 'javadoc'
+        from file("$buildDir/androidgraphextension-javadoc.jar")
+    }
+
     artifacts {
         archives androidSourcesJar
+        archives androidJavaDocJar
     }
 }

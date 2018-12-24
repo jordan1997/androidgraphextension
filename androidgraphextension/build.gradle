@@ -21,10 +21,6 @@ android {
     }
 }
 
-dokka {
-    classpath = [new File("$buildDir/other.jar")]
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -32,3 +28,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation "io.mockk:mockk:1.8.7"
 }
+
+apply from: 'https://raw.github.com/Vorlonsoft/EasyDokkaPlugin/master/dokka.gradle'
