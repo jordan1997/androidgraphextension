@@ -84,7 +84,7 @@ implementation 'tech.schoolhelper:apachextension:1.0.0'
 - RectF.getCenter() : PointF
 - RectF.isNotEmpty : Boolean
 
-## Easy make Quad Path
+### Easy make Quad Path
 
 ```kotlin
 val samplePoints = listOf<PointF>() // list must be init
