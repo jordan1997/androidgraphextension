@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply from: '../maven-push.gradle'
 apply plugin: 'org.jetbrains.dokka-android'
 
 android {
@@ -30,3 +29,4 @@ dependencies {
 }
 
 apply from: 'https://raw.github.com/Vorlonsoft/EasyDokkaPlugin/master/dokka.gradle'
+apply from: 'https://raw.github.com/Vorlonsoft/GradleMavenPush/master/maven-push.gradle'

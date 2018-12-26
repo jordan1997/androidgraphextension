@@ -11,8 +11,6 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
-        classpath 'org.codehaus.groovy:groovy-all:2.4.12'
         classpath "org.jetbrains.dokka:dokka-android-gradle-plugin:${dokka_version}"
     }
 }
@@ -28,3 +26,5 @@ allprojects {
 tasks.withType(Javadoc) {
     enabled = false
 }
+
+apply plugin: 'org.jetbrains.dokka-android'
