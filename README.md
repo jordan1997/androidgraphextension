@@ -2,7 +2,6 @@
 A library for more easy work with the android canvas
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Maven Central](https://img.shields.io/maven-central/v/tech.schoolhelper/graphextension.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tech.schoolhelper%22%20AND%20a:%22graphextension%22)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Graph%20Extension-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7167)
 
 ## Documentation
@@ -23,13 +22,16 @@ A library for more easy work with the android canvas
 `dev` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=dev)](https://travis-ci.org/schoolhelper/androidgraphextension)
 
 ## Add android graph extension to project
+[![Maven Central](https://img.shields.io/maven-central/v/tech.schoolhelper/graphextension.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tech.schoolhelper%22%20AND%20a:%22graphextension%22)
+
 ```groovy
-implementation 'tech.schoolhelper:graphextension:0.4.0'
+implementation 'tech.schoolhelper:graphextension:1.0.0'
 ```
 
 ## Add apache math extension to project
+[![Maven Central](https://img.shields.io/maven-central/v/tech.schoolhelper/apachextension.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tech.schoolhelper%22%20AND%20a:%22apachextension%22)
 ```groovy
-implementation 'tech.schoolhelper:apachextension:0.4.0'
+implementation 'tech.schoolhelper:apachextension:1.0.0'
 ```
 
 ## Graphextension module include following kotlin extension methods

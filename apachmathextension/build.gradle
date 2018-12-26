@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply from: '../maven-push.gradle'
 apply plugin: 'org.jetbrains.dokka-android'
 
 android {
@@ -16,7 +15,7 @@ android {
     lintOptions {
         abortOnError false
     }
-    
+
     buildTypes {
         debug {
             testCoverageEnabled true
@@ -30,3 +29,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "org.apache.commons:commons-math3:3.6.1"
 }
+
+apply from: 'https://raw.github.com/Vorlonsoft/EasyDokkaPlugin/master/dokka.gradle'
+apply from: 'https://raw.github.com/Vorlonsoft/GradleMavenPush/master/maven-push.gradle'
