@@ -24,12 +24,12 @@ A library for more easy work with the android canvas
 
 ## Add android graph extension to project
 ```groovy
-implementation 'tech.schoolhelper:graphextension:0.4.0'
+implementation 'tech.schoolhelper:graphextension:1.0.0'
 ```
 
 ## Add apache math extension to project
 ```groovy
-implementation 'tech.schoolhelper:apachextension:0.4.0'
+implementation 'tech.schoolhelper:apachextension:1.0.0'
 ```
 
 ## Graphextension module include following kotlin extension methods
