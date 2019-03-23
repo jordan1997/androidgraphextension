@@ -3,6 +3,7 @@ A library for more easy work with the android canvas
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Graph%20Extension-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7167)
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=schoolhelper/androidgraphextension)](https://dependabot.com)
 
 ## Documentation
 ### Android graph extension
