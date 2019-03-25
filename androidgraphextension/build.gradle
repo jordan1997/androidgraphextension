@@ -25,7 +25,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     testImplementation 'junit:junit:4.12'
-    testImplementation "io.mockk:mockk:1.9.2"
+    testImplementation "io.mockk:mockk:1.9.3"
 }
 
 apply from: 'https://raw.github.com/Vorlonsoft/EasyDokkaPlugin/master/dokka.gradle'
