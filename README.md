@@ -37,7 +37,7 @@ implementation 'tech.schoolhelper:apachextension:1.0.0'
 
 ## Graphextension module include following kotlin extension methods
 
-### Module has following for path (`android.graphics.Path`):
+### Module has following extension methods for path (`android.graphics.Path`):
 - Path.moveTo(PointF)
 - Path.moveTo(Point)
 - Path.moveTo(Int, Int)
