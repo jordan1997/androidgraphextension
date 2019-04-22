@@ -37,7 +37,7 @@ implementation 'tech.schoolhelper:apachextension:1.0.0'
 
 ## Graphextension module include following kotlin extension methods
 
-### Module has following extension methods for path (`android.graphics.Path`):
+### Module has the following extension methods for path (`android.graphics.Path`):
 - Path.moveTo(PointF)
 - Path.moveTo(Point)
 - Path.moveTo(Int, Int)
@@ -57,7 +57,7 @@ implementation 'tech.schoolhelper:apachextension:1.0.0'
 - Path.quadTo(controlPoint: PointF, point: PointF)
 - Path.quadToByPreviousPoint(previousPoint: PointF, point: PointF)
 
-### Module has following operators for Point(`android.graphics.Point`) and PointF (`android.graphics.PointF`):
+### Module has the following operators for Point(`android.graphics.Point`) and PointF (`android.graphics.PointF`):
 - unaryMinus `val point = -somePoint`
 - minus `pointA - pointB`
 - plus `pointA + pointB`
@@ -67,6 +67,11 @@ implementation 'tech.schoolhelper:apachextension:1.0.0'
 - div `point / Double`
 - div `point / Float`
 - div `point / Int`
+
+### Module has the following extension methods for the Point(`android.graphics.Point`), PointF (`android.graphics.PointF`) and MotionEvent(`android.view.MotionEvent`):
+- distanceTo(MotionEvent)
+- distanceTo(Point)
+- distanceTo(PointF)
 
 ### Module has following operators for the Rect(`android.graphics.Rect`)
 - Rect.contains(event: MotionEvent) : Boolean
