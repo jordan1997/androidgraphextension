@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0
+### Codebase
+- add `distanceTo` methods for Point, PointF and MotionEvent
+- Move all code from `java` folder to `kotlin` 
+
 ## 1.0.0
 
 ### Codebase
@@ -23,12 +28,12 @@
 
 #### RectF (Thanks, [yoavst](https://github.com/yoavst) for [PR](https://github.com/schoolhelper/androidgraphextension/pull/26))
 - implement `RectF.contains(MotionEvent)`
-- implement `RectF.contains(x, y)'
-- implement `RectF.contains(Point)'
+- implement `RectF.contains(x, y)`
+- implement `RectF.contains(Point)`
 - implement `RectF.contains(PointF)`
-- implement `RectF.contains(Rect)'
-- implement `RectF.getCenter()'
-- implement `RectF.isNotEmpty'
+- implement `RectF.contains(Rect)`
+- implement `RectF.getCenter()`
+- implement `RectF.isNotEmpty`
 
 ### Others
 - Add auto deploy documentation to [web page](http://schoolhelper.tech/)
