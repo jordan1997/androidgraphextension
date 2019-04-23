@@ -4,7 +4,23 @@ import android.graphics.Point
 import android.graphics.PointF
 import android.view.MotionEvent
 
+fun PointF.distanceTo(event: MotionEvent): Double {
+	return dim(this, PointF(event))
+}
+
+fun PointF.distanceTo(point: Point): Double {
+	return dim(this, PointF(point))
+}
+
+fun PointF.distanceTo(pointF: PointF): Double {
+	return dim(this, pointF)
+}
+
 fun PointF(event: MotionEvent) = PointF(event.x, event.y)
+
+fun PointF(x: Int, y: Int) = PointF(x.toFloat(), y.toFloat())
+
+fun PointF(x: Double, y: Double) = PointF(x.toFloat(), y.toFloat())
 
 fun PointF.toPoint() = Point(this.x.toInt(), this.y.toInt())
 
