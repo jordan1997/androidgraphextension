@@ -18,6 +18,10 @@ fun PointF.distanceTo(pointF: PointF): Double {
 
 fun PointF(event: MotionEvent) = PointF(event.x, event.y)
 
+fun PointF(x: Int, y: Int) = PointF(x.toFloat(), y.toFloat())
+
+fun PointF(x: Double, y: Double) = PointF(x.toFloat(), y.toFloat())
+
 fun PointF.toPoint() = Point(this.x.toInt(), this.y.toInt())
 
 operator fun PointF.unaryMinus() = PointF(-this.x, -this.y)

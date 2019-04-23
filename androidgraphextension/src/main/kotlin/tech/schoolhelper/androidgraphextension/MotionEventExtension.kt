@@ -15,3 +15,15 @@ fun MotionEvent.distanceTo(point: Point): Double {
 fun MotionEvent.distanceTo(pointF: PointF): Double {
 	return dim(PointF(this), pointF)
 }
+
+fun MotionEvent.distanceTo(x: Int, y: Int): Double {
+	return dim(PointF(this), PointF(x, y))
+}
+
+fun MotionEvent.distanceTo(x: Float, y: Float): Double {
+	return dim(PointF(this), PointF(x, y))
+}
+
+fun MotionEvent.distanceTo(x: Double, y: Double): Double {
+	return dim(PointF(this), PointF(x, y))
+}

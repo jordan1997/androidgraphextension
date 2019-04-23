@@ -72,6 +72,9 @@ implementation 'tech.schoolhelper:apachextension:1.0.0'
 - distanceTo(MotionEvent)
 - distanceTo(Point)
 - distanceTo(PointF)
+- distanceTo(Int, Int)
+- distanceTo(Float, Float)
+- distanceTo(Double, Double)
 
 ### Module has following operators for the Rect(`android.graphics.Rect`)
 - Rect.contains(event: MotionEvent) : Boolean

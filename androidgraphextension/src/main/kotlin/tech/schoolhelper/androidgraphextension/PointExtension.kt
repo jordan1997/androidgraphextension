@@ -16,6 +16,18 @@ fun Point.distanceTo(pointF: PointF): Double {
 	return dim(PointF(this), pointF)
 }
 
+fun Point.distanceTo(x: Int, y: Int): Double {
+	return dim(PointF(this), PointF(x, y))
+}
+
+fun Point.distanceTo(x: Float, y: Float): Double {
+	return dim(PointF(this), PointF(x, y))
+}
+
+fun Point.distanceTo(x: Double, y: Double): Double {
+	return dim(PointF(this), PointF(x, y))
+}
+
 /**
 	* Convert Point to PointF;
 	* @return PointF based on this instance
