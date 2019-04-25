@@ -21,14 +21,3 @@ before_install:
 # Run assemble and unit tests
 script:
   - ./gradlew clean testDebugUnitTest
-deploy:
-  - provider: script
-    skip_cleanup: true
-    script: sshpass -e scp -v -o StrictHostKeyChecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/dev && sshpass -e scp -v -o StrictHostKeyChecking=no -r apachmathextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/dev
-    on:
-      branch: dev
-  - provider: script
-    skip_cleanup: true
-    script: sshpass -e scp -v -o StrictHostKeyChecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/master && sshpass -e scp -v -o StrictHostKeyChecking=no -r apachmathextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/master
-    on:
-      branch: master
