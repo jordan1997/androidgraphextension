@@ -20,4 +20,5 @@ before_install:
 
 # Run assemble and unit tests
 script:
-  - ./gradlew clean testDebugUnitTest
+  - ./gradlew clean testDebugUnitTest testDebugUnitTestCoverage
+  - cp androidgraphextension/build/reports/jacoco/testDebugUnitTestCoverage/testDebugUnitTestCoverage.xml cobertura.xml
