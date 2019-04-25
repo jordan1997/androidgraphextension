@@ -3,7 +3,10 @@
 ## 1.1.0
 ### Codebase
 - add `distanceTo` methods for Point, PointF and MotionEvent
-- Move all code from `java` folder to `kotlin` 
+- Move all code from `java` folder to `kotlin`
+
+### Migration/Updates
+- Update kotlin to 1.3.31
 
 ## 1.0.0
 
