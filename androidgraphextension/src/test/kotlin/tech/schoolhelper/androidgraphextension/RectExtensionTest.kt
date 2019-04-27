@@ -1,4 +1,4 @@
-package com.schoolhelper.androidgraphextension
+package tech.schoolhelper.androidgraphextension
 
 import android.graphics.Rect
 import io.mockk.MockKAnnotations

@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'org.jetbrains.dokka-android'
 
 android {
     compileSdkVersion 28
@@ -18,6 +17,15 @@ android {
         }
         release {}
     }
+
+    sourceSets {
+        main {
+            java.srcDirs += "src/main/kotlin"
+        }
+        test {
+            java.srcDirs += "src/test/kotlin"
+        }
+    }
 }
 
 dependencies {
@@ -25,8 +33,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     testImplementation 'junit:junit:4.12'
-    testImplementation "io.mockk:mockk:1.9.2"
+    testImplementation "io.mockk:mockk:1.9.3"
 }
 
-apply from: 'https://raw.github.com/Vorlonsoft/EasyDokkaPlugin/master/dokka.gradle'
-apply from: 'https://raw.github.com/Vorlonsoft/GradleMavenPush/master/maven-push.gradle'
+apply from: 'https://gist.githubusercontent.com/mrsasha/384a19f97cdeba5b5c2ea55f930fccd4/raw/bb3ce24b06ed6ae102597e4b948b9abd2af8392c/jacoco.gradle'

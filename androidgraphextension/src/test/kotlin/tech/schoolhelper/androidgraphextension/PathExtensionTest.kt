@@ -1,4 +1,4 @@
-package com.schoolhelper.androidgraphextension
+package tech.schoolhelper.androidgraphextension
 
 import android.graphics.Path
 import android.graphics.Point
@@ -8,7 +8,6 @@ import io.mockk.impl.annotations.MockK
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import tech.schoolhelper.androidgraphextension.*
 
 class PathExtensionTest {
 	
