@@ -18,9 +18,9 @@ A library for more easy work with the android canvas
 
 
 ## Branches stastus
-`master` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=master)](https://travis-ci.org/schoolhelper/androidgraphextension)
+`master` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=master)](https://travis-ci.org/schoolhelper/androidgraphextension) [![codecov](https://codecov.io/gh/schoolhelper/androidgraphextension/branch/master/graph/badge.svg)](https://codecov.io/gh/schoolhelper/androidgraphextension)
 
-`dev` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=dev)](https://travis-ci.org/schoolhelper/androidgraphextension)
+`dev` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=dev)](https://travis-ci.org/schoolhelper/androidgraphextension) [![codecov](https://codecov.io/gh/schoolhelper/androidgraphextension/branch/dev/graph/badge.svg)](https://codecov.io/gh/schoolhelper/androidgraphextension)
 
 ## Add android graph extension to project
 [![Maven Central](https://img.shields.io/maven-central/v/tech.schoolhelper/graphextension.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tech.schoolhelper%22%20AND%20a:%22graphextension%22)
