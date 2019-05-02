@@ -2,20 +2,15 @@ package tech.schoolhelper.androidgraphextension
 
 import android.graphics.Rect
 import io.mockk.MockKAnnotations
-import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.mockkStatic
 import io.mockk.verify
 import org.junit.Before
 import org.junit.Test
-import tech.schoolhelper.androidgraphextension.getCenter
 
 class RectExtensionTest {
 	
-	private val centerX = 10
-	private val centerY = 20
-	
-	@MockK(relaxUnitFun = true)
+	@MockK(relaxed = true)
 	lateinit var rect: Rect
 	
 	@Before
@@ -23,14 +18,6 @@ class RectExtensionTest {
 		MockKAnnotations.init(this, relaxUnitFun = true)
 		mockkStatic("android.graphics.Point")
 		mockkStatic("android.graphics.Rect")
-		
-		every {
-			rect.centerX()
-		} returns centerX
-		
-		every {
-			rect.centerY()
-		} returns centerY
 	}
 	
 	@Test
@@ -39,5 +26,19 @@ class RectExtensionTest {
 		
 		verify { rect.centerX() }
 		verify { rect.centerY() }
+	}
+	
+	@Test
+	fun testContainsFloat() {
+		rect.contains(0.5F, 0.5F)
+		
+		verify { rect.contains(0, 0) }
+	}
+	
+	@Test
+	fun testContainsDouble() {
+		rect.contains(1.35, 23.44)
+		
+		verify { rect.contains(1, 23) }
 	}
 }

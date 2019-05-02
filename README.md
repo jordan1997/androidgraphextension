@@ -79,14 +79,17 @@ implementation 'tech.schoolhelper:apachextension:1.0.0'
 ### Module has following operators for the Rect(`android.graphics.Rect`)
 - Rect.contains(event: MotionEvent) : Boolean
 - Rect.contains(Float, Float) : Boolean
-- Rect.isNotEmpty : Boolean
+- Rect.contains(Double, Double)
 - Rect.contains(Point) : Boolean
 - Rect.contains(PointF) : Boolean
 - Rect.contains(RectF) : Boolean
+- Rect.getCenter() : PointF
+- Rect.isNotEmpty : Boolean
 
 ### Module has following operators for the RectF(`android.graphics.RectF`)
 - RectF.contains(MotionEvent) : Boolean 
-- RectF.contains(x, y) : Boolean
+- RectF.contains(Float, Float) : Boolean
+- RectF.contains(Double, Double)
 - RectF.contains(Point) : Boolean
 - RectF.contains(PointF) : Boolean
 - RectF.contains(Rect) : Boolean
@@ -160,5 +163,4 @@ val path = Path()
 path.moveTo(point1)
 path.lineTo(point2)
 path.setLastPoint(point3)
-
 ```

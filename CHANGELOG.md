@@ -3,6 +3,8 @@
 ## 1.1.0
 ### Codebase
 - add `distanceTo` methods for Point, PointF and MotionEvent
+- add `Rect.contains(Double, Double)`
+- add `RectF.contains(Double, Double)`
 - Move all code from `java` folder to `kotlin`
 
 ### Migration/Updates
