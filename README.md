@@ -164,3 +164,8 @@ path.moveTo(point1)
 path.lineTo(point2)
 path.setLastPoint(point3)
 ```
+
+# Deploy
+```bash
+./gradlew uploadArchives -PNEXUS_USERNAME=$NEXUS_USERNAME -PNEXUS_PASSWORD=$NEXUS_PASSWORD
+```
