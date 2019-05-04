@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'org.jetbrains.dokka-android'
 
 android {
     compileSdkVersion 28
@@ -38,3 +39,5 @@ dependencies {
 }
 
 apply from: 'https://gist.githubusercontent.com/mrsasha/384a19f97cdeba5b5c2ea55f930fccd4/raw/bb3ce24b06ed6ae102597e4b948b9abd2af8392c/jacoco.gradle'
+
+apply from: 'https://raw.githubusercontent.com/schoolhelper/GradleMavenPush/master/maven-push.gradle'
