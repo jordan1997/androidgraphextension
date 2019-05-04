@@ -5,7 +5,7 @@ android:
     - build-tools-27.0.3
 env:
   global:
-   # install timeout in minutes (2 minutes by default)
+    # install timeout in minutes (2 minutes by default)
     - ADB_INSTALL_TIMEOUT=8
 
 before_install:
@@ -18,3 +18,10 @@ script:
   - cp androidgraphextension/build/reports/jacoco/testDebugUnitTestCoverage/testDebugUnitTestCoverage.xml cobertura.xml
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: ./gradlew uploadArchives -PNEXUS_USERNAME=$NEXUS_USERNAME -PNEXUS_PASSWORD=$NEXUS_PASSWORD
+    on:
+      tags: true
