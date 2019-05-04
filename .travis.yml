@@ -12,7 +12,6 @@ before_install:
   - yes | sdkmanager "platforms;android-27"
   - chmod +x gradlew
 
-# Run assemble and unit tests
 script:
   - ./gradlew clean testDebugUnitTest testDebugUnitTestCoverage
   - cp androidgraphextension/build/reports/jacoco/testDebugUnitTestCoverage/testDebugUnitTestCoverage.xml cobertura.xml
