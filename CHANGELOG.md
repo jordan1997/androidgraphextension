@@ -10,6 +10,9 @@
 ### Migration/Updates
 - Update kotlin to 1.3.31
 
+### Other
+- Add auto deploy library 
+
 ## 1.0.0
 
 ### Codebase
