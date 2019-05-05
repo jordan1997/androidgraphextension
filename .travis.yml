@@ -21,6 +21,6 @@ after_success:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: ./gradlew uploadArchives -PNEXUS_USERNAME=$NEXUS_USERNAME -PNEXUS_PASSWORD=$NEXUS_PASSWORD -Psigning.secretKeyRingFile=secring.gpg -Psigning.keyId=$keyId -Psigning.password=$password
+    script: ./gradlew uploadArchives -PNEXUS_USERNAME=$NEXUS_USERNAME -PNEXUS_PASSWORD=$NEXUS_PASSWORD -Psigning.secretKeyRingFile=./secring.gpg -Psigning.keyId=$keyId -Psigning.password=$password
     on:
       tags: true
