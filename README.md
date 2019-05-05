@@ -132,7 +132,6 @@ view.setOnTouchListener { v, event ->
 val point = PointF(5F, 5F)
 val scaleUpPoint = point * 5
 val scaleDownPoint = point / 5
-
 ```
 
 ## Convert

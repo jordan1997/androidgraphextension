@@ -9,6 +9,7 @@ env:
     - ADB_INSTALL_TIMEOUT=8
 
 before_install:
+  - cat ~/.gradle/gradle.properties
   - yes | sdkmanager "platforms;android-27"
   - chmod +x gradlew
 
