@@ -18,9 +18,9 @@ A library for more easy work with the android canvas
 
 
 ## Branches stastus
-`master` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=master)](https://travis-ci.org/schoolhelper/androidgraphextension)
+`master` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=master)](https://travis-ci.org/schoolhelper/androidgraphextension) [![codecov](https://codecov.io/gh/schoolhelper/androidgraphextension/branch/master/graph/badge.svg)](https://codecov.io/gh/schoolhelper/androidgraphextension)
 
-`dev` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=dev)](https://travis-ci.org/schoolhelper/androidgraphextension)
+`dev` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=dev)](https://travis-ci.org/schoolhelper/androidgraphextension) [![codecov](https://codecov.io/gh/schoolhelper/androidgraphextension/branch/dev/graph/badge.svg)](https://codecov.io/gh/schoolhelper/androidgraphextension)
 
 ## Add android graph extension to project
 [![Maven Central](https://img.shields.io/maven-central/v/tech.schoolhelper/graphextension.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tech.schoolhelper%22%20AND%20a:%22graphextension%22)
@@ -132,7 +132,6 @@ view.setOnTouchListener { v, event ->
 val point = PointF(5F, 5F)
 val scaleUpPoint = point * 5
 val scaleDownPoint = point / 5
-
 ```
 
 ## Convert
@@ -163,4 +162,9 @@ val path = Path()
 path.moveTo(point1)
 path.lineTo(point2)
 path.setLastPoint(point3)
+```
+
+# Deploy
+```bash
+./gradlew uploadArchives -PNEXUS_USERNAME=$NEXUS_USERNAME -PNEXUS_PASSWORD=$NEXUS_PASSWORD
 ```
