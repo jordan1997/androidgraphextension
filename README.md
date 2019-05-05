@@ -132,7 +132,6 @@ view.setOnTouchListener { v, event ->
 val point = PointF(5F, 5F)
 val scaleUpPoint = point * 5
 val scaleDownPoint = point / 5
-
 ```
 
 ## Convert
@@ -163,4 +162,9 @@ val path = Path()
 path.moveTo(point1)
 path.lineTo(point2)
 path.setLastPoint(point3)
+```
+
+# Deploy
+```bash
+./gradlew uploadArchives -PNEXUS_USERNAME=$NEXUS_USERNAME -PNEXUS_PASSWORD=$NEXUS_PASSWORD
 ```

@@ -26,7 +26,6 @@ proguard/
 # Log Files
 *.log
 
-
 ## Directory-based project format:
 .idea/
 
@@ -56,7 +55,7 @@ pom.xml.releaseBackup
 pom.xml.versionsBackup
 pom.xml.next
 release.properties
-secring.gpg
+# secring.gpg
 
 # [Gradle-Android] ========================
 

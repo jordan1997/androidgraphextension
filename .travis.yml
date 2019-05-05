@@ -12,7 +12,6 @@ before_install:
   - yes | sdkmanager "platforms;android-27"
   - chmod +x gradlew
 
-# Run assemble and unit tests
 script:
   - ./gradlew clean testDebugUnitTest testDebugUnitTestCoverage
   - cp androidgraphextension/build/reports/jacoco/testDebugUnitTestCoverage/testDebugUnitTestCoverage.xml cobertura.xml
@@ -22,6 +21,6 @@ after_success:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: ./gradlew uploadArchives -PNEXUS_USERNAME=$NEXUS_USERNAME -PNEXUS_PASSWORD=$NEXUS_PASSWORD
+    script: ./gradlew uploadArchives -PNEXUS_USERNAME=$NEXUS_USERNAME -PNEXUS_PASSWORD=$NEXUS_PASSWORD -Psigning.secretKeyRingFile=../secring.gpg -Psigning.keyId=$keyId -Psigning.password=$password
     on:
       tags: true
