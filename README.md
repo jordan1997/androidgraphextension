@@ -26,13 +26,13 @@ A library for more easy work with the android canvas
 [![Maven Central](https://img.shields.io/maven-central/v/tech.schoolhelper/graphextension.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tech.schoolhelper%22%20AND%20a:%22graphextension%22)
 
 ```groovy
-implementation 'tech.schoolhelper:graphextension:1.0.0'
+implementation 'tech.schoolhelper:graphextension:1.1.0'
 ```
 
 ## Add apache math extension to project
 [![Maven Central](https://img.shields.io/maven-central/v/tech.schoolhelper/apachextension.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tech.schoolhelper%22%20AND%20a:%22apachextension%22)
 ```groovy
-implementation 'tech.schoolhelper:apachextension:1.0.0'
+implementation 'tech.schoolhelper:apachextension:1.1.0'
 ```
 
 ## Graphextension module include following kotlin extension methods
@@ -166,5 +166,5 @@ path.setLastPoint(point3)
 
 # Deploy
 ```bash
-./gradlew uploadArchives -PNEXUS_USERNAME=$NEXUS_USERNAME -PNEXUS_PASSWORD=$NEXUS_PASSWORD
+./gradlew uploadArchives -PNEXUS_USERNAME=$NEXUS_USERNAME -PNEXUS_PASSWORD=$NEXUS_PASSWORD -Psigning.secretKeyRingFile=../secring.gpg -Psigning.keyId=$keyId -Psigning.password=$password
 ```
