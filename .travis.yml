@@ -3,6 +3,12 @@ android:
   components:
     - android-28
     - build-tools-27.0.3
+addons:
+  ssh_known_hosts: 167.99.94.185
+  apt:
+    packages:
+      - sshpass
+
 env:
   global:
     # install timeout in minutes (2 minutes by default)
@@ -13,7 +19,7 @@ before_install:
   - chmod +x gradlew
 
 script:
-  - ./gradlew clean testDebugUnitTest testDebugUnitTestCoverage
+  - ./gradlew clean testDebugUnitTest testDebugUnitTestCoverage dokka
   - cp androidgraphextension/build/reports/jacoco/testDebugUnitTestCoverage/testDebugUnitTestCoverage.xml cobertura.xml
 after_success:
   - bash <(curl -s https://codecov.io/bash)
@@ -24,3 +30,13 @@ deploy:
     script: ./gradlew uploadArchives -PNEXUS_USERNAME=$NEXUS_USERNAME -PNEXUS_PASSWORD=$NEXUS_PASSWORD -Psigning.secretKeyRingFile=../secring.gpg -Psigning.keyId=$keyId -Psigning.password=$password
     on:
       tags: true
+  - provider: script
+    skip_cleanup: true
+    script: sshpass -e scp -v -o StrictHostKeyChecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/dev
+    on:
+      branch: dev
+  - provider: script
+    skip_cleanup: true
+    script: sshpass -e scp -v -o StrictHostKeyChecking=no -r androidgraphextension/build/dokka/ schoolhelper@167.99.94.185:/var/www/schoolhelper.tech/master
+    on:
+      branch: master
