@@ -5,6 +5,11 @@ A library for more easy work with the android canvas
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Graph%20Extension-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7167)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=schoolhelper/androidgraphextension)](https://dependabot.com)
 
+[![Mergify Status][mergify-status]][mergify]
+
+[mergify]: https://mergify.io
+[mergify-status]: https://gh.mergify.io/badges/:schoolhelper/:androidgraphextension.png?style=small
+
 ## Documentation
 ### Android graph extension
 `master` [Documentation](https://schoolhelper.tech/master/dokka/androidgraphextension/)
