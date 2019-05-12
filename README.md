@@ -44,24 +44,24 @@ implementation 'tech.schoolhelper:apachextension:1.1.0'
 ## Graphextension module include following kotlin extension methods
 
 ### Module has the following extension methods for path (`android.graphics.Path`):
-- Path.moveTo(PointF)
-- Path.moveTo(Point)
-- Path.moveTo(Int, Int)
-- Path.lineTo(PointF)
-- Path.lineTo(Point)
-- Path.lineTo(Int, Int)
-- Path.setLastPoint(PointF)
-- Path.setLastPoint(Point)
-- Path.setLastPoint(Int, Int)
-- Path.offset(PointF)
-- Path.offset(Point)
-- Path.offset(Int, Int)
-- Path.addRect(PointF, PointF)
-- Path.addRect(PointF, PointF, Path.Direction)
-- Path.addRect(Int, Int, Int)
-- Path.addRect(Float, Float, Float)
-- Path.quadTo(controlPoint: PointF, point: PointF)
-- Path.quadToByPreviousPoint(previousPoint: PointF, point: PointF)
+|with library						|without libary                 				|
+|-------------------------------------------------------|---------------------------------------------------------------|
+|path.moveTo(pointF)					|path.moveTo(pointF.x, pointF.y)				|
+|path.moveTo(point)					|path.moveTo(point.x.toFloat(), point.y.toFloat())		|
+|path.moveTo(xIntValue, yIntValue)			|path.moveTo(xIntValue.toFloat(), yIntValue.toFloat()		|
+|path.lineTo(pointF)					|path.lineTo(pointF.x, pointF.y)				|
+|path.lineTo(point)					|path.lineTo(point.x.toFloat(), point.y.toFloat())		|
+|path.lineTo(xIntValue, yIntValue)			|path.lineTo(xIntValue.toFloat(), yIntValue.toFloat()		|
+|path.setLastPoint(pointF)				|path.setLastPoint(pointF.x, pointF.y)				|
+|path.setLastPoint(point)				|path.setLastPoint(point.x.toFloat(), point.y.toFloat())	|
+|path.setLastPoint(xIntValue, yIntValue)		|path.setLastPoint(xIntValue.toFloat(), yIntValue.toFloat()	|
+|path.offset(pointF)					|path.offset(pointF.x, pointF.y)				|
+|path.offset(point)					|path.offset(point.x.toFloat(), point.y.toFloat())		|
+|path.offset(xIntValue, yIntValue)			|path.offset(xIntValue.toFloat(), yIntValue.toFloat()		|
+|path.addRect(pointF1, pointF2)				|path.addRect(pointF1.x, pointF1.y, pointF2.x, pointF2.y)	|
+|path.addRect(point1, point2)				|path.addRect(point1.x.toFloat(), point1.y.toFloat(), point2.x.toFloat(), point2.y.toFloat())	|
+|path.addRect(leftInt, topInt, rightInt, bottomInt)	|path.addRect(leftInt.toFloat(), topInt.toFloat(), rightInt.toFloat(), bottomInt.toFloat())
+|path.quadTo(controlPointF, pointF)			|path.quadTo(controlPointF.x, controlPointF.y, pointF.x, pointF.y)|
 
 ### Module has the following operators for Point(`android.graphics.Point`) and PointF (`android.graphics.PointF`):
 - unaryMinus `val point = -somePoint`
