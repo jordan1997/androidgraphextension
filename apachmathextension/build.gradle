@@ -2,6 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'org.jetbrains.dokka-android'
 
+group = 'com.github.schoolhelper'
+
 android {
     compileSdkVersion 28
 

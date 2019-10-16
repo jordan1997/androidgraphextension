@@ -2,6 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'org.jetbrains.dokka-android'
 
+group = 'com.github.schoolhelper'
+
 android {
     compileSdkVersion 28
 
@@ -29,6 +31,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation 'com.github.schoolhelper:androidgraphextension:remove_maven-SNAPSHOT'
 
     testImplementation 'junit:junit:4.12'
     testImplementation "io.mockk:mockk:1.9.3"
