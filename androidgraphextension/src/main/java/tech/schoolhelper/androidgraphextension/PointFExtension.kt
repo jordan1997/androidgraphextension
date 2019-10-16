@@ -4,14 +4,24 @@ import android.graphics.Point
 import android.graphics.PointF
 import android.view.MotionEvent
 
+/**
+	* Method calculate dimension to MotionEvent
+	*/
 fun PointF.distanceTo(event: MotionEvent): Double {
 	return dim(this, PointF(event))
 }
+
+/**
+	* Method calculate dimension to Point
+	*/
 
 fun PointF.distanceTo(point: Point): Double {
 	return dim(this, PointF(point))
 }
 
+/**
+	* Method calculate dimension to PointF
+	*/
 fun PointF.distanceTo(pointF: PointF): Double {
 	return dim(this, pointF)
 }

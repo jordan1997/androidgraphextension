@@ -2,60 +2,55 @@
 A library for more easy work with the android canvas
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CodeFactor](https://www.codefactor.io/repository/github/schoolhelper/androidgraphextension/badge)](https://www.codefactor.io/repository/github/schoolhelper/androidgraphextension)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Graph%20Extension-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7167)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=schoolhelper/androidgraphextension)](https://dependabot.com)
-
-## Documentation
-### Android graph extension
-`master` [Documentation](https://schoolhelper.tech/master/dokka/androidgraphextension/)
-
-`dev` [Documentation](https://schoolhelper.tech/dev/dokka/androidgraphextension/)
-
-### Apache math extension
-`master` [Documentation](https://schoolhelper.tech/master/dokka/apachmathextension/index.html)
-
-`dev` [Documentation](https://schoolhelper.tech/dev/dokka/apachmathextension/index.html)
-
+[![JitPack](https://jitpack.io/v/schoolhelper/androidgraphextension.svg)](https://jitpack.io/#schoolhelper/androidgraphextension)
 
 ## Branches stastus
 `master` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=master)](https://travis-ci.org/schoolhelper/androidgraphextension) [![codecov](https://codecov.io/gh/schoolhelper/androidgraphextension/branch/master/graph/badge.svg)](https://codecov.io/gh/schoolhelper/androidgraphextension)
 
 `dev` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=dev)](https://travis-ci.org/schoolhelper/androidgraphextension) [![codecov](https://codecov.io/gh/schoolhelper/androidgraphextension/branch/dev/graph/badge.svg)](https://codecov.io/gh/schoolhelper/androidgraphextension)
 
-## Add android graph extension to project
-[![Maven Central](https://img.shields.io/maven-central/v/tech.schoolhelper/graphextension.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tech.schoolhelper%22%20AND%20a:%22graphextension%22)
-
+## Integration
+Add it in your root build.gradle at the end of repositories:
 ```groovy
-implementation 'tech.schoolhelper:graphextension:1.1.0'
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
 ```
 
-## Add apache math extension to project
-[![Maven Central](https://img.shields.io/maven-central/v/tech.schoolhelper/apachextension.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tech.schoolhelper%22%20AND%20a:%22apachextension%22)
+Add the dependency
 ```groovy
-implementation 'tech.schoolhelper:apachextension:1.1.0'
+dependencies {
+	        implementation 'com.github.schoolhelper:androidgraphextension:v1.2.0'
+}
 ```
 
-## Graphextension module include following kotlin extension methods
+## Graphextension include following kotlin extension methods
 
 ### Module has the following extension methods for path (`android.graphics.Path`):
-- Path.moveTo(PointF)
-- Path.moveTo(Point)
-- Path.moveTo(Int, Int)
-- Path.lineTo(PointF)
-- Path.lineTo(Point)
-- Path.lineTo(Int, Int)
-- Path.setLastPoint(PointF)
-- Path.setLastPoint(Point)
-- Path.setLastPoint(Int, Int)
-- Path.offset(PointF)
-- Path.offset(Point)
-- Path.offset(Int, Int)
-- Path.addRect(PointF, PointF)
-- Path.addRect(PointF, PointF, Path.Direction)
-- Path.addRect(Int, Int, Int)
-- Path.addRect(Float, Float, Float)
-- Path.quadTo(controlPoint: PointF, point: PointF)
-- Path.quadToByPreviousPoint(previousPoint: PointF, point: PointF)
+|with library						|without library                 				|
+|-------------------------------------------------------|---------------------------------------------------------------|
+|path.moveTo(pointF)					|path.moveTo(pointF.x, pointF.y)				|
+|path.moveTo(point)					|path.moveTo(point.x.toFloat(), point.y.toFloat())		|
+|path.moveTo(xIntValue, yIntValue)			|path.moveTo(xIntValue.toFloat(), yIntValue.toFloat()		|
+|path.lineTo(pointF)					|path.lineTo(pointF.x, pointF.y)				|
+|path.lineTo(point)					|path.lineTo(point.x.toFloat(), point.y.toFloat())		|
+|path.lineTo(xIntValue, yIntValue)			|path.lineTo(xIntValue.toFloat(), yIntValue.toFloat()		|
+|path.setLastPoint(pointF)				|path.setLastPoint(pointF.x, pointF.y)				|
+|path.setLastPoint(point)				|path.setLastPoint(point.x.toFloat(), point.y.toFloat())	|
+|path.setLastPoint(xIntValue, yIntValue)		|path.setLastPoint(xIntValue.toFloat(), yIntValue.toFloat()	|
+|path.offset(pointF)					|path.offset(pointF.x, pointF.y)				|
+|path.offset(point)					|path.offset(point.x.toFloat(), point.y.toFloat())		|
+|path.offset(xIntValue, yIntValue)			|path.offset(xIntValue.toFloat(), yIntValue.toFloat()		|
+|path.addRect(pointF1, pointF2)				|path.addRect(pointF1.x, pointF1.y, pointF2.x, pointF2.y)	|
+|path.addRect(point1, point2)				|path.addRect(point1.x.toFloat(), point1.y.toFloat(), point2.x.toFloat(), point2.y.toFloat())	|
+|path.addRect(leftInt, topInt, rightInt, bottomInt)	|path.addRect(leftInt.toFloat(), topInt.toFloat(), rightInt.toFloat(), bottomInt.toFloat())
+|path.quadTo(controlPointF, pointF)			|path.quadTo(controlPointF.x, controlPointF.y, pointF.x, pointF.y)|
 
 ### Module has the following operators for Point(`android.graphics.Point`) and PointF (`android.graphics.PointF`):
 - unaryMinus `val point = -somePoint`

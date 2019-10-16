@@ -3,6 +3,7 @@ android:
   components:
     - android-28
     - build-tools-27.0.3
+
 env:
   global:
     # install timeout in minutes (2 minutes by default)
@@ -13,14 +14,7 @@ before_install:
   - chmod +x gradlew
 
 script:
-  - ./gradlew clean testDebugUnitTest testDebugUnitTestCoverage
+  - ./gradlew clean testDebugUnitTest testDebugUnitTestCoverage dokka
   - cp androidgraphextension/build/reports/jacoco/testDebugUnitTestCoverage/testDebugUnitTestCoverage.xml cobertura.xml
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-
-deploy:
-  - provider: script
-    skip_cleanup: true
-    script: ./gradlew uploadArchives -PNEXUS_USERNAME=$NEXUS_USERNAME -PNEXUS_PASSWORD=$NEXUS_PASSWORD -Psigning.secretKeyRingFile=../secring.gpg -Psigning.keyId=$keyId -Psigning.password=$password
-    on:
-      tags: true

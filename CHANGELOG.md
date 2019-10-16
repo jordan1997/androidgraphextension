@@ -1,4 +1,10 @@
 # Changelog
+## 1.2.0
+### Migration/Updates
+- Update kotlin to 1.3.50
+
+### Other
+- Migrate library to JitPack
 
 ## 1.1.0
 ### Codebase
