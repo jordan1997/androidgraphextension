@@ -32,8 +32,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation 'com.github.schoolhelper:androidgraphextension:remove_maven-SNAPSHOT'
-
     testImplementation 'junit:junit:4.12'
     testImplementation "io.mockk:mockk:1.9.3"
     testImplementation 'io.kotlintest:kotlintest-runner-junit5:3.3.2'
