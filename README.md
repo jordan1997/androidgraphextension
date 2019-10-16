@@ -5,41 +5,35 @@ A library for more easy work with the android canvas
 [![CodeFactor](https://www.codefactor.io/repository/github/schoolhelper/androidgraphextension/badge)](https://www.codefactor.io/repository/github/schoolhelper/androidgraphextension)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Graph%20Extension-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7167)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=schoolhelper/androidgraphextension)](https://dependabot.com)
-
-## Documentation
-### Android graph extension
-`master` [Documentation](https://schoolhelper.tech/master/dokka/androidgraphextension/)
-
-`dev` [Documentation](https://schoolhelper.tech/dev/dokka/androidgraphextension/)
-
-### Apache math extension
-`master` [Documentation](https://schoolhelper.tech/master/dokka/apachmathextension/index.html)
-
-`dev` [Documentation](https://schoolhelper.tech/dev/dokka/apachmathextension/index.html)
-
+[![JitPack](https://jitpack.io/v/schoolhelper/androidgraphextension.svg)](https://jitpack.io/#schoolhelper/androidgraphextension)
 
 ## Branches stastus
 `master` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=master)](https://travis-ci.org/schoolhelper/androidgraphextension) [![codecov](https://codecov.io/gh/schoolhelper/androidgraphextension/branch/master/graph/badge.svg)](https://codecov.io/gh/schoolhelper/androidgraphextension)
 
 `dev` [![Build Status](https://travis-ci.org/schoolhelper/androidgraphextension.svg?branch=dev)](https://travis-ci.org/schoolhelper/androidgraphextension) [![codecov](https://codecov.io/gh/schoolhelper/androidgraphextension/branch/dev/graph/badge.svg)](https://codecov.io/gh/schoolhelper/androidgraphextension)
 
-## Add android graph extension to project
-[![Maven Central](https://img.shields.io/maven-central/v/tech.schoolhelper/graphextension.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tech.schoolhelper%22%20AND%20a:%22graphextension%22)
-
+## Integration
+Add it in your root build.gradle at the end of repositories:
 ```groovy
-implementation 'tech.schoolhelper:graphextension:1.1.0'
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
 ```
 
-## Add apache math extension to project
-[![Maven Central](https://img.shields.io/maven-central/v/tech.schoolhelper/apachextension.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22tech.schoolhelper%22%20AND%20a:%22apachextension%22)
+Add the dependency
 ```groovy
-implementation 'tech.schoolhelper:apachextension:1.1.0'
+dependencies {
+	        implementation 'com.github.schoolhelper:androidgraphextension:1.2.0'
+}
 ```
 
-## Graphextension module include following kotlin extension methods
+## Graphextension include following kotlin extension methods
 
 ### Module has the following extension methods for path (`android.graphics.Path`):
-|with library						|without libary                 				|
+|with library						|without library                 				|
 |-------------------------------------------------------|---------------------------------------------------------------|
 |path.moveTo(pointF)					|path.moveTo(pointF.x, pointF.y)				|
 |path.moveTo(point)					|path.moveTo(point.x.toFloat(), point.y.toFloat())		|
