@@ -26,7 +26,7 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency
 ```groovy
 dependencies {
-	        implementation 'com.github.schoolhelper:androidgraphextension:1.2.0'
+	        implementation 'com.github.schoolhelper:androidgraphextension:v1.2.0'
 }
 ```
 
