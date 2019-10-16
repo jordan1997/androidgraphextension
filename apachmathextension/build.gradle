@@ -29,5 +29,3 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "org.apache.commons:commons-math3:3.6.1"
 }
-
-apply from: 'https://raw.githubusercontent.com/schoolhelper/GradleMavenPush/master/maven-push.gradle'
