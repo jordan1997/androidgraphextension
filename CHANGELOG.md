@@ -1,5 +1,4 @@
 # Changelog
-
 ## 1.2.0
 ### Migration/Updates
 - Update kotlin to 1.3.50
